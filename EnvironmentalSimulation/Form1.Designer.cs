@@ -36,6 +36,7 @@
             this.방1전등 = new System.Windows.Forms.Button();
             this.방1난방 = new System.Windows.Forms.Button();
             this.방1에어컨 = new System.Windows.Forms.Button();
+            this.cld = new System.Windows.Forms.ColorDialog();
             this.방1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -147,6 +148,7 @@
         private System.Windows.Forms.Button 방1전등;
         private System.Windows.Forms.Button 방1난방;
         private System.Windows.Forms.Button 방1에어컨;
+        private System.Windows.Forms.ColorDialog cld;
     }
 }
 
