@@ -16,5 +16,12 @@ namespace EnvironmentalSimulation
         {
             InitializeComponent();
         }
+
+        private void 방1공기청정기_Click(object sender, EventArgs e)
+        {
+            AirCleaner airCleaner = new AirCleaner();
+            airCleaner.Owner = this;
+            airCleaner.Show();
+        }
     }
 }
