@@ -37,6 +37,8 @@
             this.방1난방 = new System.Windows.Forms.Button();
             this.방1에어컨 = new System.Windows.Forms.Button();
             this.cld = new System.Windows.Forms.ColorDialog();
+            this.button1 = new System.Windows.Forms.Button();
+            this.방3.SuspendLayout();
             this.방1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +54,7 @@
             // 
             // 방3
             // 
+            this.방3.Controls.Add(this.button1);
             this.방3.Location = new System.Drawing.Point(33, 329);
             this.방3.Name = "방3";
             this.방3.Size = new System.Drawing.Size(300, 300);
@@ -122,6 +125,15 @@
             this.방1에어컨.Text = "에어컨";
             this.방1에어컨.UseVisualStyleBackColor = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(24, 50);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -133,6 +145,7 @@
             this.Controls.Add(this.방1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.방3.ResumeLayout(false);
             this.방1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -149,6 +162,7 @@
         private System.Windows.Forms.Button 방1난방;
         private System.Windows.Forms.Button 방1에어컨;
         private System.Windows.Forms.ColorDialog cld;
+        private System.Windows.Forms.Button button1;
     }
 }
 
