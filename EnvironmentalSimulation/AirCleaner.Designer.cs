@@ -40,36 +40,41 @@
             // 
             // btnNight
             // 
-            this.btnNight.Location = new System.Drawing.Point(42, 104);
+            this.btnNight.BackgroundImage = global::EnvironmentalSimulation.Properties.Resources.moon;
+            this.btnNight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNight.Location = new System.Drawing.Point(78, 208);
+            this.btnNight.Margin = new System.Windows.Forms.Padding(6);
             this.btnNight.Name = "btnNight";
-            this.btnNight.Size = new System.Drawing.Size(60, 60);
+            this.btnNight.Size = new System.Drawing.Size(111, 120);
             this.btnNight.TabIndex = 0;
-            this.btnNight.Text = "Night";
             this.btnNight.UseVisualStyleBackColor = true;
             // 
             // btnAuto
             // 
-            this.btnAuto.Location = new System.Drawing.Point(198, 104);
+            this.btnAuto.Location = new System.Drawing.Point(368, 208);
+            this.btnAuto.Margin = new System.Windows.Forms.Padding(6);
             this.btnAuto.Name = "btnAuto";
-            this.btnAuto.Size = new System.Drawing.Size(60, 60);
+            this.btnAuto.Size = new System.Drawing.Size(111, 120);
             this.btnAuto.TabIndex = 1;
             this.btnAuto.Text = "Auto";
             this.btnAuto.UseVisualStyleBackColor = true;
             // 
             // btnTimer
             // 
-            this.btnTimer.Location = new System.Drawing.Point(122, 104);
+            this.btnTimer.Location = new System.Drawing.Point(227, 208);
+            this.btnTimer.Margin = new System.Windows.Forms.Padding(6);
             this.btnTimer.Name = "btnTimer";
-            this.btnTimer.Size = new System.Drawing.Size(60, 60);
+            this.btnTimer.Size = new System.Drawing.Size(111, 120);
             this.btnTimer.TabIndex = 2;
             this.btnTimer.Text = "00:00";
             this.btnTimer.UseVisualStyleBackColor = true;
             // 
             // btnPower
             // 
-            this.btnPower.Location = new System.Drawing.Point(104, 216);
+            this.btnPower.Location = new System.Drawing.Point(193, 432);
+            this.btnPower.Margin = new System.Windows.Forms.Padding(6);
             this.btnPower.Name = "btnPower";
-            this.btnPower.Size = new System.Drawing.Size(94, 42);
+            this.btnPower.Size = new System.Drawing.Size(175, 84);
             this.btnPower.TabIndex = 3;
             this.btnPower.Text = "Power";
             this.btnPower.UseVisualStyleBackColor = true;
@@ -78,9 +83,10 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(113, 197);
+            this.radioButton1.Location = new System.Drawing.Point(210, 394);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(6);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(14, 13);
+            this.radioButton1.Size = new System.Drawing.Size(27, 26);
             this.radioButton1.TabIndex = 4;
             this.radioButton1.TabStop = true;
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -88,9 +94,10 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(144, 197);
+            this.radioButton2.Location = new System.Drawing.Point(267, 394);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(6);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(14, 13);
+            this.radioButton2.Size = new System.Drawing.Size(27, 26);
             this.radioButton2.TabIndex = 5;
             this.radioButton2.TabStop = true;
             this.radioButton2.UseVisualStyleBackColor = true;
@@ -98,9 +105,10 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(175, 197);
+            this.radioButton3.Location = new System.Drawing.Point(325, 394);
+            this.radioButton3.Margin = new System.Windows.Forms.Padding(6);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(14, 13);
+            this.radioButton3.Size = new System.Drawing.Size(27, 26);
             this.radioButton3.TabIndex = 6;
             this.radioButton3.TabStop = true;
             this.radioButton3.UseVisualStyleBackColor = true;
@@ -108,17 +116,18 @@
             // button5
             // 
             this.button5.Enabled = false;
-            this.button5.Location = new System.Drawing.Point(65, 50);
+            this.button5.Location = new System.Drawing.Point(121, 100);
+            this.button5.Margin = new System.Windows.Forms.Padding(6);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(172, 26);
+            this.button5.Size = new System.Drawing.Size(319, 52);
             this.button5.TabIndex = 7;
             this.button5.UseVisualStyleBackColor = true;
             // 
             // AirCleaner
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(298, 295);
+            this.ClientSize = new System.Drawing.Size(553, 590);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton2);
@@ -127,6 +136,7 @@
             this.Controls.Add(this.btnTimer);
             this.Controls.Add(this.btnAuto);
             this.Controls.Add(this.btnNight);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "AirCleaner";
             this.Text = "AirCleaner";
             this.Shown += new System.EventHandler(this.AirCleaner_Shown);
