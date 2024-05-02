@@ -32,9 +32,9 @@
             this.btnAuto = new System.Windows.Forms.Button();
             this.btnTimer = new System.Windows.Forms.Button();
             this.btnPower = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.rdoLow = new System.Windows.Forms.RadioButton();
+            this.rdoMid = new System.Windows.Forms.RadioButton();
+            this.rdoHigh = new System.Windows.Forms.RadioButton();
             this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -80,38 +80,38 @@
             this.btnPower.UseVisualStyleBackColor = true;
             this.btnPower.Click += new System.EventHandler(this.btnPower_Click);
             // 
-            // radioButton1
+            // rdoLow
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(210, 394);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(6);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(27, 26);
-            this.radioButton1.TabIndex = 4;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdoLow.AutoSize = true;
+            this.rdoLow.Location = new System.Drawing.Point(210, 394);
+            this.rdoLow.Margin = new System.Windows.Forms.Padding(6);
+            this.rdoLow.Name = "rdoLow";
+            this.rdoLow.Size = new System.Drawing.Size(27, 26);
+            this.rdoLow.TabIndex = 4;
+            this.rdoLow.TabStop = true;
+            this.rdoLow.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rdoMid
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(267, 394);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(6);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(27, 26);
-            this.radioButton2.TabIndex = 5;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdoMid.AutoSize = true;
+            this.rdoMid.Location = new System.Drawing.Point(267, 394);
+            this.rdoMid.Margin = new System.Windows.Forms.Padding(6);
+            this.rdoMid.Name = "rdoMid";
+            this.rdoMid.Size = new System.Drawing.Size(27, 26);
+            this.rdoMid.TabIndex = 5;
+            this.rdoMid.TabStop = true;
+            this.rdoMid.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rdoHigh
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(325, 394);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(6);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(27, 26);
-            this.radioButton3.TabIndex = 6;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rdoHigh.AutoSize = true;
+            this.rdoHigh.Location = new System.Drawing.Point(325, 394);
+            this.rdoHigh.Margin = new System.Windows.Forms.Padding(6);
+            this.rdoHigh.Name = "rdoHigh";
+            this.rdoHigh.Size = new System.Drawing.Size(27, 26);
+            this.rdoHigh.TabIndex = 6;
+            this.rdoHigh.TabStop = true;
+            this.rdoHigh.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
@@ -129,9 +129,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(553, 590);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.rdoHigh);
+            this.Controls.Add(this.rdoMid);
+            this.Controls.Add(this.rdoLow);
             this.Controls.Add(this.btnPower);
             this.Controls.Add(this.btnTimer);
             this.Controls.Add(this.btnAuto);
@@ -151,9 +151,9 @@
         private System.Windows.Forms.Button btnAuto;
         private System.Windows.Forms.Button btnTimer;
         private System.Windows.Forms.Button btnPower;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton rdoLow;
+        private System.Windows.Forms.RadioButton rdoMid;
+        private System.Windows.Forms.RadioButton rdoHigh;
         private System.Windows.Forms.Button button5;
     }
 }
