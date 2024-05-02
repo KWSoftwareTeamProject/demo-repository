@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.방4 = new System.Windows.Forms.GroupBox();
+            this.방4공기청정기 = new System.Windows.Forms.Button();
+            this.방4난방 = new System.Windows.Forms.Button();
+            this.방4전등 = new System.Windows.Forms.Button();
+            this.방4에어컨 = new System.Windows.Forms.Button();
             this.방3 = new System.Windows.Forms.GroupBox();
             this.방2 = new System.Windows.Forms.GroupBox();
             this.방1 = new System.Windows.Forms.GroupBox();
@@ -37,10 +41,6 @@
             this.방1난방 = new System.Windows.Forms.Button();
             this.방1에어컨 = new System.Windows.Forms.Button();
             this.cld = new System.Windows.Forms.ColorDialog();
-            this.방4에어컨 = new System.Windows.Forms.Button();
-            this.방4전등 = new System.Windows.Forms.Button();
-            this.방4난방 = new System.Windows.Forms.Button();
-            this.방4공기청정기 = new System.Windows.Forms.Button();
             this.방4.SuspendLayout();
             this.방1.SuspendLayout();
             this.SuspendLayout();
@@ -61,6 +61,50 @@
             this.방4.TabIndex = 7;
             this.방4.TabStop = false;
             this.방4.Text = "방4";
+            // 
+            // 방4공기청정기
+            // 
+            this.방4공기청정기.BackColor = System.Drawing.Color.Lime;
+            this.방4공기청정기.Location = new System.Drawing.Point(6, 22);
+            this.방4공기청정기.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.방4공기청정기.Name = "방4공기청정기";
+            this.방4공기청정기.Size = new System.Drawing.Size(101, 200);
+            this.방4공기청정기.TabIndex = 4;
+            this.방4공기청정기.Text = "공기청정기";
+            this.방4공기청정기.UseVisualStyleBackColor = false;
+            // 
+            // 방4난방
+            // 
+            this.방4난방.BackColor = System.Drawing.Color.Red;
+            this.방4난방.Location = new System.Drawing.Point(268, 96);
+            this.방4난방.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.방4난방.Name = "방4난방";
+            this.방4난방.Size = new System.Drawing.Size(25, 70);
+            this.방4난방.TabIndex = 4;
+            this.방4난방.Text = "난방";
+            this.방4난방.UseVisualStyleBackColor = false;
+            // 
+            // 방4전등
+            // 
+            this.방4전등.BackColor = System.Drawing.Color.Yellow;
+            this.방4전등.Location = new System.Drawing.Point(268, 22);
+            this.방4전등.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.방4전등.Name = "방4전등";
+            this.방4전등.Size = new System.Drawing.Size(25, 70);
+            this.방4전등.TabIndex = 4;
+            this.방4전등.Text = "전등";
+            this.방4전등.UseVisualStyleBackColor = false;
+            // 
+            // 방4에어컨
+            // 
+            this.방4에어컨.BackColor = System.Drawing.Color.Blue;
+            this.방4에어컨.Location = new System.Drawing.Point(143, 246);
+            this.방4에어컨.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.방4에어컨.Name = "방4에어컨";
+            this.방4에어컨.Size = new System.Drawing.Size(150, 50);
+            this.방4에어컨.TabIndex = 4;
+            this.방4에어컨.Text = "에어컨";
+            this.방4에어컨.UseVisualStyleBackColor = false;
             // 
             // 방3
             // 
@@ -121,6 +165,7 @@
             this.방1전등.TabIndex = 2;
             this.방1전등.Text = "전등";
             this.방1전등.UseVisualStyleBackColor = false;
+            this.방1전등.Click += new System.EventHandler(this.방1전등_Click);
             // 
             // 방1난방
             // 
@@ -143,50 +188,6 @@
             this.방1에어컨.TabIndex = 0;
             this.방1에어컨.Text = "에어컨";
             this.방1에어컨.UseVisualStyleBackColor = false;
-            // 
-            // 방4에어컨
-            // 
-            this.방4에어컨.BackColor = System.Drawing.Color.Blue;
-            this.방4에어컨.Location = new System.Drawing.Point(143, 246);
-            this.방4에어컨.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.방4에어컨.Name = "방4에어컨";
-            this.방4에어컨.Size = new System.Drawing.Size(150, 50);
-            this.방4에어컨.TabIndex = 4;
-            this.방4에어컨.Text = "에어컨";
-            this.방4에어컨.UseVisualStyleBackColor = false;
-            // 
-            // 방4전등
-            // 
-            this.방4전등.BackColor = System.Drawing.Color.Yellow;
-            this.방4전등.Location = new System.Drawing.Point(268, 22);
-            this.방4전등.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.방4전등.Name = "방4전등";
-            this.방4전등.Size = new System.Drawing.Size(25, 70);
-            this.방4전등.TabIndex = 4;
-            this.방4전등.Text = "전등";
-            this.방4전등.UseVisualStyleBackColor = false;
-            // 
-            // 방4난방
-            // 
-            this.방4난방.BackColor = System.Drawing.Color.Red;
-            this.방4난방.Location = new System.Drawing.Point(268, 96);
-            this.방4난방.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.방4난방.Name = "방4난방";
-            this.방4난방.Size = new System.Drawing.Size(25, 70);
-            this.방4난방.TabIndex = 4;
-            this.방4난방.Text = "난방";
-            this.방4난방.UseVisualStyleBackColor = false;
-            // 
-            // 방4공기청정기
-            // 
-            this.방4공기청정기.BackColor = System.Drawing.Color.Lime;
-            this.방4공기청정기.Location = new System.Drawing.Point(6, 22);
-            this.방4공기청정기.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.방4공기청정기.Name = "방4공기청정기";
-            this.방4공기청정기.Size = new System.Drawing.Size(101, 200);
-            this.방4공기청정기.TabIndex = 4;
-            this.방4공기청정기.Text = "공기청정기";
-            this.방4공기청정기.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
