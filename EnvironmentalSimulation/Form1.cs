@@ -19,7 +19,7 @@ namespace EnvironmentalSimulation
 
         private void 공기청정기_Click(object sender, EventArgs e)
         {
-            AirCleaner airCleaner = new AirCleaner
+            AirCleanerController airCleaner = new AirCleanerController
             {
                 Owner = this
             };

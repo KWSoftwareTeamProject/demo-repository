@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace EnvironmentalSimulation
 {
-    public partial class AirCleaner : Form
+    public partial class AirCleanerController : Form
     {
-        public AirCleaner()
+        public AirCleanerController()
         {
             InitializeComponent();
         }

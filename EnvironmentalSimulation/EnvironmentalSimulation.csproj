@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AirCleaner.cs">
+    <Compile Include="AirCleanerController.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AirCleaner.Designer.cs">
-      <DependentUpon>AirCleaner.cs</DependentUpon>
+    <Compile Include="AirCleanerController.Designer.cs">
+      <DependentUpon>AirCleanerController.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -60,8 +60,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AirCleaner.resx">
-      <DependentUpon>AirCleaner.cs</DependentUpon>
+    <EmbeddedResource Include="AirCleanerController.resx">
+      <DependentUpon>AirCleanerController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

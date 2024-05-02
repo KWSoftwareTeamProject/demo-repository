@@ -1,6 +1,6 @@
 ﻿namespace EnvironmentalSimulation
 {
-    partial class AirCleaner
+    partial class AirCleanerController
     {
         /// <summary>
         /// Required designer variable.
