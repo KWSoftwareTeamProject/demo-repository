@@ -175,6 +175,7 @@
             this.방1전등.TabIndex = 2;
             this.방1전등.Text = "전등";
             this.방1전등.UseVisualStyleBackColor = false;
+            this.방1전등.Click += new System.EventHandler(this.방1전등_Click);
             // 
             // 방1난방
             // 
