@@ -58,5 +58,12 @@ namespace EnvironmentalSimulation
             //currentDateColor = Color.FromArgb();//배경색깔 추가
             setTime.Start();
         }
+
+        private void 방1에어컨_Click(object sender, EventArgs e)//방1의 에어컨 컨트롤러 오픈
+        {
+            AirconController AC1 = new AirconController();
+            AC1.Owner = this;
+            AC1.Show();
+        }
     }
 }

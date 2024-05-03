@@ -190,6 +190,7 @@
             this.방1에어컨.TabIndex = 0;
             this.방1에어컨.Text = "에어컨";
             this.방1에어컨.UseVisualStyleBackColor = false;
+            this.방1에어컨.Click += new System.EventHandler(this.방1에어컨_Click);
             // 
             // setTime
             // 
