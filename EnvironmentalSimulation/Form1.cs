@@ -12,7 +12,11 @@ namespace EnvironmentalSimulation
 {
     public partial class Form1 : Form
     {
-        public bool Room1Light = false;
+        public Color currentDateColor;//현제 날짜의 색깔 여부
+
+
+        public bool Room1Light = false;//방1의 전등 on/off여부
+
         public Form1()
         {
             InitializeComponent();
@@ -35,17 +39,42 @@ namespace EnvironmentalSimulation
             LC.Show();
         }
 
-        private void Change_Light(object sender, EventArgs e)
+        private void Change_Light(object sender, EventArgs e)//컨트롤러에서 인자 전달
         {
             LightController Lc= sender as LightController;
             Color Lightness=Lc.GetLightnessValue();
             방1.BackColor = Lightness;
         }
 
-        public Color GetRoom1data()
+        public Color GetRoom1data()//방1의 배경색 전달
         {
             Color color = Color.FromArgb(방1.BackColor.R, 방1.BackColor.G, 방1.BackColor.B);
             return color;
+        }
+
+        private void setTime_Tick(object sender, EventArgs e)
+        {
+           if(Room1Light==false)//방1의 전등이 on 되어 있을때 작동
+            {
+                방1.BackColor = currentDateColor;
+            }
+            
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            currentDateColor = new Color();
+            //currentDateColor = Color.FromArgb();//배경색깔 추가
+            setTime.Start();
+        }
+
+        private void 방3공기청정기_Click(object sender, EventArgs e)
+        {
+            AirCleanerController airCleaner = new AirCleanerController
+            {
+                Owner = this
+            };
+            airCleaner.Show();
         }
     }
 }

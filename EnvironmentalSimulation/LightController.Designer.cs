@@ -49,7 +49,6 @@
             this.BackGround1.ReadOnly = true;
             this.BackGround1.Size = new System.Drawing.Size(482, 653);
             this.BackGround1.TabIndex = 1;
-            this.BackGround1.TextChanged += new System.EventHandler(this.BackGround1_TextChanged);
             // 
             // textBox1
             // 
@@ -68,7 +67,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(430, 230);
             this.textBox2.TabIndex = 3;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // lightturn
             // 
