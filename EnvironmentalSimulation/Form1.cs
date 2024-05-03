@@ -22,7 +22,16 @@ namespace EnvironmentalSimulation
             InitializeComponent();
         }
 
-        private void 방1전등_Click(object sender, EventArgs e)//방1의 전등 컨트롤러 오픈
+        private void 공기청정기_Click(object sender, EventArgs e)
+        {
+            AirCleanerController airCleaner = new AirCleanerController
+            {
+                Owner = this
+            };
+            airCleaner.Show();
+        }
+
+        private void 방1전등_Click(object sender, EventArgs e)
         {
             LightController LC= new LightController();
             LC.Owner = this;

@@ -35,9 +35,9 @@
             this.방4전등 = new System.Windows.Forms.Button();
             this.방4에어컨 = new System.Windows.Forms.Button();
             this.방3 = new System.Windows.Forms.GroupBox();
-            this.방3전등 = new System.Windows.Forms.Button();
-            this.방3난방 = new System.Windows.Forms.Button();
             this.방3에어컨 = new System.Windows.Forms.Button();
+            this.방3난방 = new System.Windows.Forms.Button();
+            this.방3전등 = new System.Windows.Forms.Button();
             this.방3공기청정기 = new System.Windows.Forms.Button();
             this.방2 = new System.Windows.Forms.GroupBox();
             this.방1 = new System.Windows.Forms.GroupBox();
@@ -116,9 +116,9 @@
             // 방3
             // 
             this.방3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.방3.Controls.Add(this.방3전등);
-            this.방3.Controls.Add(this.방3난방);
             this.방3.Controls.Add(this.방3에어컨);
+            this.방3.Controls.Add(this.방3난방);
+            this.방3.Controls.Add(this.방3전등);
             this.방3.Controls.Add(this.방3공기청정기);
             this.방3.Location = new System.Drawing.Point(34, 329);
             this.방3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -129,7 +129,7 @@
             this.방3.TabStop = false;
             this.방3.Text = "방3";
             // 
-            // 방3전등
+            // 방3에어컨
             // 
             this.방3전등.BackColor = System.Drawing.Color.Yellow;
             this.방3전등.Location = new System.Drawing.Point(6, 22);
@@ -151,7 +151,7 @@
             this.방3난방.Text = "난방";
             this.방3난방.UseVisualStyleBackColor = false;
             // 
-            // 방3에어컨
+            // 방3전등
             // 
             this.방3에어컨.BackColor = System.Drawing.Color.Blue;
             this.방3에어컨.Location = new System.Drawing.Point(6, 246);
@@ -172,7 +172,7 @@
             this.방3공기청정기.TabIndex = 5;
             this.방3공기청정기.Text = "공기청정기";
             this.방3공기청정기.UseVisualStyleBackColor = false;
-            this.방3공기청정기.Click += new System.EventHandler(this.방3공기청정기_Click);
+            this.방3공기청정기.Click += new System.EventHandler(this.공기청정기_Click);
             // 
             // 방2
             // 
