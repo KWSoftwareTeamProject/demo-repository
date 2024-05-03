@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,6 +13,7 @@ namespace EnvironmentalSimulation
 {
     public partial class AirCleanerController : Form
     {
+        
         public AirCleanerController()
         {
             InitializeComponent();
@@ -71,6 +73,11 @@ namespace EnvironmentalSimulation
                 rdoLow.Checked = true;
                 return rdoLow;
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
