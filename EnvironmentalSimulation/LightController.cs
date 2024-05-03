@@ -32,7 +32,13 @@ namespace EnvironmentalSimulation
             currentTime.Start();
             Form1 form1 = (Form1)this.Owner;
             Color R1color = form1.GetRoom1data();//현재 방의 색깔이 무엇인지 표기
-            textBox3.BackColor = R1color;
+            textBox2.BackColor = R1color;
+            if (form1.Room1Light == false)
+            {
+                this.lightturn.Enabled = false;
+            }
+            else
+                this.hsbright.Enabled = false;
         }
 
        
@@ -47,10 +53,14 @@ namespace EnvironmentalSimulation
                 {
                     ChangeLight(this, new EventArgs());
                     form1.Room1Light = true;
+                    this.hsbright.Enabled = false;
+
                 }
                 else
                 {
                     form1.Room1Light = false;//배경 색으로 변경 필요
+                    this.hsbright.Enabled = true;
+                    
                 }
             }
         }
@@ -62,8 +72,14 @@ namespace EnvironmentalSimulation
 
         private void hsbright_Scroll(object sender, ScrollEventArgs e)
         {
+            this.lightturn.Enabled = true;
             Color color = Color.FromArgb(255, 255, hsbright.Value);
             textBox3.BackColor = color;
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
