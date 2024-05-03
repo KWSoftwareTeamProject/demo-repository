@@ -19,29 +19,20 @@ namespace EnvironmentalSimulation
             InitializeComponent();
         }
 
-        private void BackGround1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+ 
         private void currentTime_Tick(object sender, EventArgs e)
         {
             Form1 form1 = (Form1)this.Owner;
-            Color color = form1.GetRoom1data();
-            textBox2.BackColor = color;
+            Color color = form1.GetRoom1data();//룸1의 방을 설정
+            textBox2.BackColor = color;//룸1의 현재 방 색이 무엇인지 표기
         }
 
         private void LightController_Load(object sender, EventArgs e)
         {
             currentTime.Start();
             Form1 form1 = (Form1)this.Owner;
-            Color color = form1.GetRoom1data();
-            textBox3.BackColor = color;
+            Color R1color = form1.GetRoom1data();//현재 방의 색깔이 무엇인지 표기
+            textBox3.BackColor = R1color;
         }
 
        
@@ -50,16 +41,17 @@ namespace EnvironmentalSimulation
         private void lightturn_Click(object sender, EventArgs e)
         {
             Form1 form1 = (Form1)this.Owner;
-            if (form1.Room1Light == false)
+            if (ChangeLight != null)
             {
-                if (ChangeLight != null)
+                if (form1.Room1Light == false)
                 {
                     ChangeLight(this, new EventArgs());
+                    form1.Room1Light = true;
                 }
-            }
-            else
-            {
-                form1.Room1Light = false ;//배경 색으로 변경 필요
+                else
+                {
+                    form1.Room1Light = false;//배경 색으로 변경 필요
+                }
             }
         }
 

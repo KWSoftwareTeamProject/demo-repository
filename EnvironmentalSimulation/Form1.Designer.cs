@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.방4 = new System.Windows.Forms.GroupBox();
             this.방4공기청정기 = new System.Windows.Forms.Button();
             this.방4난방 = new System.Windows.Forms.Button();
@@ -45,6 +46,7 @@
             this.방1난방 = new System.Windows.Forms.Button();
             this.방1에어컨 = new System.Windows.Forms.Button();
             this.cld = new System.Windows.Forms.ColorDialog();
+            this.setTime = new System.Windows.Forms.Timer(this.components);
             this.방4.SuspendLayout();
             this.방3.SuspendLayout();
             this.방1.SuspendLayout();
@@ -244,6 +246,10 @@
             this.방1에어컨.Text = "에어컨";
             this.방1에어컨.UseVisualStyleBackColor = false;
             // 
+            // setTime
+            // 
+            this.setTime.Tick += new System.EventHandler(this.setTime_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
@@ -256,6 +262,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.방4.ResumeLayout(false);
             this.방3.ResumeLayout(false);
             this.방1.ResumeLayout(false);
@@ -282,6 +289,7 @@
         private System.Windows.Forms.Button 방3난방;
         private System.Windows.Forms.Button 방3에어컨;
         private System.Windows.Forms.Button 방3공기청정기;
+        private System.Windows.Forms.Timer setTime;
     }
 }
 
