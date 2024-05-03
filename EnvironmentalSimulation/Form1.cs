@@ -38,5 +38,14 @@ namespace EnvironmentalSimulation
             Color color = Color.FromArgb(방1.BackColor.R, 방1.BackColor.G, 방1.BackColor.B);
             return color;
         }
+
+        private void 방3공기청정기_Click(object sender, EventArgs e)
+        {
+            AirCleanerController airCleaner = new AirCleanerController
+            {
+                Owner = this
+            };
+            airCleaner.Show();
+        }
     }
 }

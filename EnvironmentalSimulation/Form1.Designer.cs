@@ -41,6 +41,10 @@
             this.방1난방 = new System.Windows.Forms.Button();
             this.방1에어컨 = new System.Windows.Forms.Button();
             this.cld = new System.Windows.Forms.ColorDialog();
+            this.방3공기청정기 = new System.Windows.Forms.Button();
+            this.방3에어컨 = new System.Windows.Forms.Button();
+            this.방3난방 = new System.Windows.Forms.Button();
+            this.방3전등 = new System.Windows.Forms.Button();
             this.방4.SuspendLayout();
             this.방1.SuspendLayout();
             this.SuspendLayout();
@@ -108,8 +112,13 @@
             // 
             // 방3
             // 
-            this.방3.Location = new System.Drawing.Point(33, 329);
-            this.방3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.방3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.방3.Controls.Add(this.방3전등);
+            this.방3.Controls.Add(this.방3난방);
+            this.방3.Controls.Add(this.방3에어컨);
+            this.방3.Controls.Add(this.방3공기청정기);
+            this.방3.Location = new System.Drawing.Point(54, 526);
+            this.방3.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.방3.Name = "방3";
             this.방3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.방3.Size = new System.Drawing.Size(299, 300);
@@ -189,6 +198,51 @@
             this.방1에어컨.Text = "에어컨";
             this.방1에어컨.UseVisualStyleBackColor = false;
             // 
+            // 방3공기청정기
+            // 
+            this.방3공기청정기.BackColor = System.Drawing.Color.Lime;
+            this.방3공기청정기.Location = new System.Drawing.Point(316, 35);
+            this.방3공기청정기.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.방3공기청정기.Name = "방3공기청정기";
+            this.방3공기청정기.Size = new System.Drawing.Size(164, 320);
+            this.방3공기청정기.TabIndex = 5;
+            this.방3공기청정기.Text = "공기청정기";
+            this.방3공기청정기.UseVisualStyleBackColor = false;
+            this.방3공기청정기.Click += new System.EventHandler(this.방3공기청정기_Click);
+            // 
+            // 방3에어컨
+            // 
+            this.방3에어컨.BackColor = System.Drawing.Color.Blue;
+            this.방3에어컨.Location = new System.Drawing.Point(11, 394);
+            this.방3에어컨.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.방3에어컨.Name = "방3에어컨";
+            this.방3에어컨.Size = new System.Drawing.Size(244, 80);
+            this.방3에어컨.TabIndex = 6;
+            this.방3에어컨.Text = "에어컨";
+            this.방3에어컨.UseVisualStyleBackColor = false;
+            // 
+            // 방3난방
+            // 
+            this.방3난방.BackColor = System.Drawing.Color.Red;
+            this.방3난방.Location = new System.Drawing.Point(11, 154);
+            this.방3난방.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.방3난방.Name = "방3난방";
+            this.방3난방.Size = new System.Drawing.Size(41, 112);
+            this.방3난방.TabIndex = 7;
+            this.방3난방.Text = "난방";
+            this.방3난방.UseVisualStyleBackColor = false;
+            // 
+            // 방3전등
+            // 
+            this.방3전등.BackColor = System.Drawing.Color.Yellow;
+            this.방3전등.Location = new System.Drawing.Point(11, 35);
+            this.방3전등.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.방3전등.Name = "방3전등";
+            this.방3전등.Size = new System.Drawing.Size(41, 112);
+            this.방3전등.TabIndex = 8;
+            this.방3전등.Text = "전등";
+            this.방3전등.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -222,6 +276,10 @@
         private System.Windows.Forms.Button 방4전등;
         private System.Windows.Forms.Button 방4에어컨;
         private System.Windows.Forms.Button 방4공기청정기;
+        private System.Windows.Forms.Button 방3전등;
+        private System.Windows.Forms.Button 방3난방;
+        private System.Windows.Forms.Button 방3에어컨;
+        private System.Windows.Forms.Button 방3공기청정기;
     }
 }
 
