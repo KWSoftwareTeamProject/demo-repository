@@ -46,11 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <Compile Include="AirconController.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AirconController.Designer.cs">
+      <DependentUpon>AirconController.cs</DependentUpon>
+=======
     <Compile Include="AirCleanerController.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AirCleanerController.Designer.cs">
       <DependentUpon>AirCleanerController.cs</DependentUpon>
+>>>>>>> 6b7b82f43a524e91713fda4d3696a2b270c9e661
     </Compile>
     <Compile Include="AirconController.cs">
       <SubType>Form</SubType>
@@ -72,8 +80,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
+    <EmbeddedResource Include="AirconController.resx">
+      <DependentUpon>AirconController.cs</DependentUpon>
+=======
     <EmbeddedResource Include="AirCleanerController.resx">
       <DependentUpon>AirCleanerController.cs</DependentUpon>
+>>>>>>> 6b7b82f43a524e91713fda4d3696a2b270c9e661
     </EmbeddedResource>
     <EmbeddedResource Include="AirconController.resx">
       <DependentUpon>AirconController.cs</DependentUpon>
