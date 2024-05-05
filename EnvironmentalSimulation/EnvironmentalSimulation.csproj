@@ -52,6 +52,12 @@
     <Compile Include="AirCleanerController.Designer.cs">
       <DependentUpon>AirCleanerController.cs</DependentUpon>
     </Compile>
+    <Compile Include="AirconController.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AirconController.Designer.cs">
+      <DependentUpon>AirconController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AirCleanerController.resx">
       <DependentUpon>AirCleanerController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AirconController.resx">
+      <DependentUpon>AirconController.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
