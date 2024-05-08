@@ -212,6 +212,8 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "AirconController";
             this.Text = "AirconController";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AirconController_FormClosed);
+            this.Load += new System.EventHandler(this.AirconController_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

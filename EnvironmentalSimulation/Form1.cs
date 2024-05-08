@@ -17,6 +17,8 @@ namespace EnvironmentalSimulation
 
         public bool Room1Light = false;//방1의 전등 on/off여부
 
+        public Aircon room1AC = new Aircon(1);
+
         public Form1()
         {
             InitializeComponent();
@@ -68,12 +70,27 @@ namespace EnvironmentalSimulation
             setTime.Start();
         }
 
+        private void roomAC_Changed(object obj, EventArgs e)
+        {
+            AirconController AC = (AirconController)obj;
+            switch(AC.roomN)
+            {
+                case 1:
+                    room1AC.turnOn = AC.turnOn;
+                    room1AC.turnOnSwing = AC.turnOnSwing;
+                    room1AC.fanSpeedN = AC.fanSpeedN;
+                    room1AC.setToTemp = AC.setToTemp;
+                    break;
+            }
+        }
+
         private void 방1에어컨_Click(object sender, EventArgs e)//방1의 에어컨 컨트롤러 오픈
         {
-            AirconController AC1 = new AirconController();
-            AC1.Owner = this;
-            AC1.Show();
-
+            AirconController AC = new AirconController();
+            AC.Owner = this;
+            AC.AC_Changed(room1AC);
+            AC.Changed += new EventHandler(roomAC_Changed);
+            AC.Show();
         }
     }
 }
