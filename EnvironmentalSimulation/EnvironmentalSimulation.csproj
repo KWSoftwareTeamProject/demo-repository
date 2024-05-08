@@ -52,6 +52,7 @@
     <Compile Include="AirCleanerController.Designer.cs">
       <DependentUpon>AirCleanerController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Aircon.cs" />
     <Compile Include="AirconController.cs">
       <SubType>Form</SubType>
     </Compile>
