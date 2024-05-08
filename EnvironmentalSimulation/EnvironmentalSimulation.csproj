@@ -58,9 +58,6 @@
     <Compile Include="AirCleanerController.Designer.cs">
       <DependentUpon>AirCleanerController.cs</DependentUpon>
     </Compile>
-    <Compile Include="AirconController.Designer.cs">
-      <DependentUpon>AirconController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
