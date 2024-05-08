@@ -16,5 +16,15 @@ namespace EnvironmentalSimulation
         {
             InitializeComponent();
         }
+
+        private void turnOn_btn_Click(object sender, EventArgs e)
+        {
+            turnOnLight_btn.BackColor = Color.Red;
+        }
+
+        private void swing_btn_Click(object sender, EventArgs e)
+        {
+            swingOnLight_btn.BackColor = Color.Red;
+        }
     }
 }

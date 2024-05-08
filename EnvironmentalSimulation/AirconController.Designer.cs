@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.setToTemp_lbl = new System.Windows.Forms.Label();
+            this.fanSpeed_lbl = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.swing_lbl = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tempUp_btn = new System.Windows.Forms.Button();
             this.tempDown_btn = new System.Windows.Forms.Button();
@@ -37,12 +43,6 @@
             this.turnOnLight_btn = new System.Windows.Forms.Button();
             this.swingOnLight_btn = new System.Windows.Forms.Button();
             this.turnOn_btn = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.swing_lbl = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.fanSpeed_lbl = new System.Windows.Forms.Label();
-            this.setToTemp_lbl = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +60,66 @@
             this.groupBox1.Size = new System.Drawing.Size(503, 221);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // setToTemp_lbl
+            // 
+            this.setToTemp_lbl.AutoSize = true;
+            this.setToTemp_lbl.Font = new System.Drawing.Font("굴림", 40F);
+            this.setToTemp_lbl.Location = new System.Drawing.Point(33, 99);
+            this.setToTemp_lbl.Name = "setToTemp_lbl";
+            this.setToTemp_lbl.Size = new System.Drawing.Size(174, 67);
+            this.setToTemp_lbl.TabIndex = 13;
+            this.setToTemp_lbl.Text = "nn도";
+            // 
+            // fanSpeed_lbl
+            // 
+            this.fanSpeed_lbl.AutoSize = true;
+            this.fanSpeed_lbl.Font = new System.Drawing.Font("굴림", 15F);
+            this.fanSpeed_lbl.Location = new System.Drawing.Point(363, 62);
+            this.fanSpeed_lbl.Name = "fanSpeed_lbl";
+            this.fanSpeed_lbl.Size = new System.Drawing.Size(120, 25);
+            this.fanSpeed_lbl.TabIndex = 12;
+            this.fanSpeed_lbl.Text = "약풍,강풍";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("굴림", 15F);
+            this.label5.Location = new System.Drawing.Point(245, 62);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(112, 25);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "풍향세기";
+            // 
+            // swing_lbl
+            // 
+            this.swing_lbl.AutoSize = true;
+            this.swing_lbl.Font = new System.Drawing.Font("굴림", 15F);
+            this.swing_lbl.Location = new System.Drawing.Point(377, 136);
+            this.swing_lbl.Name = "swing_lbl";
+            this.swing_lbl.Size = new System.Drawing.Size(90, 25);
+            this.swing_lbl.TabIndex = 10;
+            this.swing_lbl.Text = "On/Off";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("굴림", 15F);
+            this.label3.Location = new System.Drawing.Point(268, 136);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 25);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "회전";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("굴림", 25F);
+            this.label2.Location = new System.Drawing.Point(21, 39);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(186, 42);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "희망온도";
             // 
             // label1
             // 
@@ -105,6 +165,7 @@
             this.swing_btn.TabIndex = 4;
             this.swing_btn.Text = "회전";
             this.swing_btn.UseVisualStyleBackColor = true;
+            this.swing_btn.Click += new System.EventHandler(this.swing_btn_Click);
             // 
             // turnOnLight_btn
             // 
@@ -132,66 +193,7 @@
             this.turnOn_btn.TabIndex = 7;
             this.turnOn_btn.Text = "전원";
             this.turnOn_btn.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("굴림", 25F);
-            this.label2.Location = new System.Drawing.Point(21, 39);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(186, 42);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "희망온도";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("굴림", 15F);
-            this.label3.Location = new System.Drawing.Point(268, 136);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 25);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "회전";
-            // 
-            // swing_lbl
-            // 
-            this.swing_lbl.AutoSize = true;
-            this.swing_lbl.Font = new System.Drawing.Font("굴림", 15F);
-            this.swing_lbl.Location = new System.Drawing.Point(377, 136);
-            this.swing_lbl.Name = "swing_lbl";
-            this.swing_lbl.Size = new System.Drawing.Size(90, 25);
-            this.swing_lbl.TabIndex = 10;
-            this.swing_lbl.Text = "On/Off";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("굴림", 15F);
-            this.label5.Location = new System.Drawing.Point(245, 62);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(112, 25);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "풍향세기";
-            // 
-            // fanSpeed_lbl
-            // 
-            this.fanSpeed_lbl.AutoSize = true;
-            this.fanSpeed_lbl.Font = new System.Drawing.Font("굴림", 15F);
-            this.fanSpeed_lbl.Location = new System.Drawing.Point(363, 62);
-            this.fanSpeed_lbl.Name = "fanSpeed_lbl";
-            this.fanSpeed_lbl.Size = new System.Drawing.Size(120, 25);
-            this.fanSpeed_lbl.TabIndex = 12;
-            this.fanSpeed_lbl.Text = "약풍,강풍";
-            // 
-            // setToTemp_lbl
-            // 
-            this.setToTemp_lbl.AutoSize = true;
-            this.setToTemp_lbl.Font = new System.Drawing.Font("굴림", 40F);
-            this.setToTemp_lbl.Location = new System.Drawing.Point(33, 99);
-            this.setToTemp_lbl.Name = "setToTemp_lbl";
-            this.setToTemp_lbl.Size = new System.Drawing.Size(174, 67);
-            this.setToTemp_lbl.TabIndex = 13;
-            this.setToTemp_lbl.Text = "nn도";
+            this.turnOn_btn.Click += new System.EventHandler(this.turnOn_btn_Click);
             // 
             // AirconController
             // 
