@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnNight = new System.Windows.Forms.Button();
             this.btnAuto = new System.Windows.Forms.Button();
             this.btnTimer = new System.Windows.Forms.Button();
@@ -35,7 +36,8 @@
             this.rdoLow = new System.Windows.Forms.RadioButton();
             this.rdoMid = new System.Windows.Forms.RadioButton();
             this.rdoHigh = new System.Windows.Forms.RadioButton();
-            this.button5 = new System.Windows.Forms.Button();
+            this.PMSensor = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btnNight
@@ -115,14 +117,18 @@
             // 
             // button5
             // 
-            this.button5.Enabled = false;
-            this.button5.Location = new System.Drawing.Point(121, 100);
-            this.button5.Margin = new System.Windows.Forms.Padding(6);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(319, 52);
-            this.button5.TabIndex = 7;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.PMSensor.Enabled = false;
+            this.PMSensor.Location = new System.Drawing.Point(74, 62);
+            this.PMSensor.Margin = new System.Windows.Forms.Padding(4);
+            this.PMSensor.Name = "PMSensor";
+            this.PMSensor.Size = new System.Drawing.Size(196, 32);
+            this.PMSensor.TabIndex = 7;
+            this.PMSensor.UseVisualStyleBackColor = true;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // AirCleanerController
             // 
@@ -155,6 +161,7 @@
         private System.Windows.Forms.RadioButton rdoLow;
         private System.Windows.Forms.RadioButton rdoMid;
         private System.Windows.Forms.RadioButton rdoHigh;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button PMSensor;
+        private System.Windows.Forms.Timer timer1;
     }
 }
