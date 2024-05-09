@@ -13,7 +13,8 @@ namespace EnvironmentalSimulation
 {
     public partial class AirCleanerController : Form
     {
-        
+        private int timer;
+
         public AirCleanerController()
         {
             InitializeComponent();
@@ -21,7 +22,7 @@ namespace EnvironmentalSimulation
 
         private void AirCleaner_Shown(object sender, EventArgs e)
         {
-            Graphics g = base.CreateGraphics();
+            Graphics g = this.CreateGraphics();
             SolidBrush brush = new SolidBrush(Color.DarkGray);
 
             g.FillEllipse(brush, 10, 10, 280, 280);
@@ -75,7 +76,24 @@ namespace EnvironmentalSimulation
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Generate_dusts();
+        }
+
+        private void Generate_dusts()
+        {
+            Random rand = new Random();
+            Graphics g = this.CreateGraphics();
+
+            for (int i = 0; i < 400; i++)
+            {
+                int X = rand.Next(1, 100);
+
+            }
+        }
+
+        private void Timer()
         {
 
         }
