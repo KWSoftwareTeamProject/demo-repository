@@ -14,6 +14,8 @@ namespace EnvironmentalSimulation
     public partial class AirCleanerController : Form
     {
         private int timer;
+        private int curDust;
+        private bool auto;
 
         public AirCleanerController()
         {
@@ -94,6 +96,21 @@ namespace EnvironmentalSimulation
         }
 
         private void Timer()
+        {
+
+        }
+
+        private void btnNight_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTimer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAuto_Click(object sender, EventArgs e)
         {
 
         }

@@ -50,6 +50,7 @@
             this.btnNight.Size = new System.Drawing.Size(111, 120);
             this.btnNight.TabIndex = 0;
             this.btnNight.UseVisualStyleBackColor = true;
+            this.btnNight.Click += new System.EventHandler(this.btnNight_Click);
             // 
             // btnAuto
             // 
@@ -60,6 +61,7 @@
             this.btnAuto.TabIndex = 1;
             this.btnAuto.Text = "Auto";
             this.btnAuto.UseVisualStyleBackColor = true;
+            this.btnAuto.Click += new System.EventHandler(this.btnAuto_Click);
             // 
             // btnTimer
             // 
@@ -70,6 +72,7 @@
             this.btnTimer.TabIndex = 2;
             this.btnTimer.Text = "00:00";
             this.btnTimer.UseVisualStyleBackColor = true;
+            this.btnTimer.Click += new System.EventHandler(this.btnTimer_Click);
             // 
             // btnPower
             // 
