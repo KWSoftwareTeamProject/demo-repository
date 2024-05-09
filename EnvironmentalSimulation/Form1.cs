@@ -83,6 +83,20 @@ namespace EnvironmentalSimulation
 
             }
             timedatalb.Text = dayTime.ToString();
+            rmlbset();
+        }
+
+        private void rmlbset()//각 방의 데이타 정보 표기 세팅
+        {
+            rm1dgdata.Text = Room1data.getDegree().ToString();
+            rm2dgdata.Text = Room2data.getDegree().ToString();
+            rm3dgdata.Text = Room3data.getDegree().ToString();
+            rm4dgdata.Text = Room4data.getDegree().ToString();
+
+            rm1fddata.Text = Room1data.getFineDust().ToString();
+            rm2fddata.Text = Room2data.getFineDust().ToString();
+            rm3fddata.Text = Room3data.getFineDust().ToString();
+            rm4fddata.Text = Room4data.getFineDust().ToString();
         }
 
         private void Form1_Load(object sender, EventArgs e)
