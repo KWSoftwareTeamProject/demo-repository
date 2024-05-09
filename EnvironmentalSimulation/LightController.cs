@@ -33,7 +33,7 @@ namespace EnvironmentalSimulation
             Form1 form1 = (Form1)this.Owner;
             Color R1color = form1.GetRoom1data();//현재 방의 색깔이 무엇인지 표기
             textBox2.BackColor = R1color;
-            if (form1.Room1Light == false)
+            if (form1.Room1data.getlightonoff() == false)
             {
                 this.lightturn.Enabled = false;
             }
@@ -49,16 +49,16 @@ namespace EnvironmentalSimulation
             Form1 form1 = (Form1)this.Owner;
             if (ChangeLight != null)
             {
-                if (form1.Room1Light == false)
+                if (form1.Room1data.getlightonoff() == false)
                 {
                     ChangeLight(this, new EventArgs());
-                    form1.Room1Light = true;
+                    form1.Room1data.setlightonoff(true);
                     this.hsbright.Enabled = false;
 
                 }
                 else
                 {
-                    form1.Room1Light = false;//배경 색으로 변경 필요
+                    form1.Room1data.setlightonoff(false);//배경 색으로 변경 필요
                     this.hsbright.Enabled = true;
                     
                 }
@@ -77,9 +77,5 @@ namespace EnvironmentalSimulation
             textBox3.BackColor = color;
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
