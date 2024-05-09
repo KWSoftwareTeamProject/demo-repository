@@ -103,6 +103,8 @@ namespace EnvironmentalSimulation
         {
             currentDateColor = new Color();
             //currentDateColor = Color.FromArgb();//배경색깔 추가
+
+            rmlbset();
         }
 
         private void roomAC_Changed(object obj, EventArgs e)
@@ -144,6 +146,28 @@ namespace EnvironmentalSimulation
             dayTime = Int32.Parse(timedata);
             seasondatalb.Text = seasondata;
             timedatalb.Text = timedata;
+
+            float fineDust;
+            switch (season) // 계절에 따라 미세먼지 초기화
+            {
+                case "봄":
+                    fineDust = 25;
+                    break;
+                case "여름":
+                    fineDust = 16;
+                    break;
+                case "가을":
+                    fineDust = 15;
+                    break;
+                default:
+                    fineDust = 29;
+                    break;
+            }
+
+            Room1data.setFineDust(fineDust);
+            Room2data.setFineDust(fineDust);
+            Room3data.setFineDust(fineDust);
+            Room4data.setFineDust(fineDust);
         }
 
         private void timestartbt_Click(object sender, EventArgs e)

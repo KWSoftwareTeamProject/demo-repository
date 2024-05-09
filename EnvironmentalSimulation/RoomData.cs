@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace EnvironmentalSimulation
         private float degree;//방의 온도
         private bool lightonoff;
         public RoomData() { 
-            fineDust = 0;//여기에 미세먼지 농도 설정 부탁
+            fineDust = 25;//여기에 미세먼지 농도 설정 부탁
             degree = 36.5f;
             lightonoff = false;
         }
