@@ -13,8 +13,11 @@ namespace EnvironmentalSimulation
 {
     public partial class AirCleanerController : Form
     {
-        private int timer;
+        public EventHandler Changed;
+
+        private Form1 form1;
         private int curDust;
+        private bool powerOn;
         private bool auto;
 
         public AirCleanerController()
@@ -24,6 +27,11 @@ namespace EnvironmentalSimulation
 
         private void AirCleaner_Shown(object sender, EventArgs e)
         {
+            form1 = sender as Form1;
+
+            powerOn = false;
+            auto = false;
+
             Graphics g = this.CreateGraphics();
             SolidBrush brush = new SolidBrush(Color.DarkGray);
 

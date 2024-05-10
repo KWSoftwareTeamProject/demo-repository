@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -39,11 +40,15 @@ namespace EnvironmentalSimulation
 
         private void 공기청정기_Click(object sender, EventArgs e)
         {
-            AirCleanerController airCleaner = new AirCleanerController
-            {
-                Owner = this
-            };
+            AirCleanerController airCleaner = new AirCleanerController();
+            airCleaner.Owner = this;
+            airCleaner.Changed += new EventHandler(ChangeFineDust);
             airCleaner.Show();
+        }
+
+        private void ChangeFineDust(object sender, EventArgs e)
+        {
+            AirCleanerController airCleaner = sender as AirCleanerController;
         }
 
         private void 방1전등_Click(object sender, EventArgs e)
