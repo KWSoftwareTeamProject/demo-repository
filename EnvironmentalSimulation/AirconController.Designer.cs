@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.setToTemp_lbl = new System.Windows.Forms.Label();
             this.fanSpeed_lbl = new System.Windows.Forms.Label();
@@ -43,6 +44,7 @@
             this.turnOnLight_btn = new System.Windows.Forms.Button();
             this.swingOnLight_btn = new System.Windows.Forms.Button();
             this.turnOn_btn = new System.Windows.Forms.Button();
+            this.ACtimer = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,11 +97,12 @@
             // 
             this.swing_lbl.AutoSize = true;
             this.swing_lbl.Font = new System.Drawing.Font("굴림", 15F);
-            this.swing_lbl.Location = new System.Drawing.Point(377, 136);
+            this.swing_lbl.Location = new System.Drawing.Point(363, 136);
             this.swing_lbl.Name = "swing_lbl";
             this.swing_lbl.Size = new System.Drawing.Size(90, 25);
             this.swing_lbl.TabIndex = 10;
             this.swing_lbl.Text = "On/Off";
+            this.swing_lbl.Click += new System.EventHandler(this.swing_lbl_Click);
             // 
             // label3
             // 
@@ -138,6 +141,7 @@
             this.tempUp_btn.TabIndex = 1;
             this.tempUp_btn.Text = "UP";
             this.tempUp_btn.UseVisualStyleBackColor = true;
+            this.tempUp_btn.Click += new System.EventHandler(this.tempUp_btn_Click);
             // 
             // tempDown_btn
             // 
@@ -147,6 +151,7 @@
             this.tempDown_btn.TabIndex = 2;
             this.tempDown_btn.Text = "DOWN";
             this.tempDown_btn.UseVisualStyleBackColor = true;
+            this.tempDown_btn.Click += new System.EventHandler(this.tempDown_btn_Click);
             // 
             // fanSpeed_btn
             // 
@@ -156,6 +161,7 @@
             this.fanSpeed_btn.TabIndex = 3;
             this.fanSpeed_btn.Text = "풍향세기";
             this.fanSpeed_btn.UseVisualStyleBackColor = true;
+            this.fanSpeed_btn.Click += new System.EventHandler(this.fanSpeed_btn_Click);
             // 
             // swing_btn
             // 
@@ -173,7 +179,6 @@
             this.turnOnLight_btn.Name = "turnOnLight_btn";
             this.turnOnLight_btn.Size = new System.Drawing.Size(94, 23);
             this.turnOnLight_btn.TabIndex = 5;
-            this.turnOnLight_btn.Text = "켜지면 색";
             this.turnOnLight_btn.UseVisualStyleBackColor = true;
             // 
             // swingOnLight_btn
@@ -182,7 +187,6 @@
             this.swingOnLight_btn.Name = "swingOnLight_btn";
             this.swingOnLight_btn.Size = new System.Drawing.Size(94, 23);
             this.swingOnLight_btn.TabIndex = 6;
-            this.swingOnLight_btn.Text = "켜지면 색";
             this.swingOnLight_btn.UseVisualStyleBackColor = true;
             // 
             // turnOn_btn
@@ -194,6 +198,10 @@
             this.turnOn_btn.Text = "전원";
             this.turnOn_btn.UseVisualStyleBackColor = true;
             this.turnOn_btn.Click += new System.EventHandler(this.turnOn_btn_Click);
+            // 
+            // ACtimer
+            // 
+            this.ACtimer.Tick += new System.EventHandler(this.ACtimer_Tick);
             // 
             // AirconController
             // 
@@ -238,5 +246,6 @@
         private System.Windows.Forms.Label swing_lbl;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Timer ACtimer;
     }
 }

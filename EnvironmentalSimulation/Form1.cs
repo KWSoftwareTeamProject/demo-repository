@@ -27,7 +27,8 @@ namespace EnvironmentalSimulation
         //시간 관련 변수 만들어서 변경할 거 필요
 
         public bool isstart = false;//모든건 이게 true여야만 실행됨
-        public Aircon room1AC = new Aircon(1);
+
+        public Aircon room1AC = new Aircon(1);//방 1의 에어컨 클래스
 
         public Form1()
         {
@@ -112,27 +113,68 @@ namespace EnvironmentalSimulation
             rmlbset();
         }
 
-        private void roomAC_Changed(object obj, EventArgs e)
+        private void roomAC_Changed(object obj, EventArgs e)//에어컨 컨트롤러를 닫을 때 컨트롤러의 마지막 정보를 폼1에 저장
         {
-            AirconController AC = (AirconController)obj;
+            AirconController AC = obj as AirconController;
             switch(AC.roomN)
             {
                 case 1:
-                    room1AC.turnOn = AC.turnOn;
-                    room1AC.turnOnSwing = AC.turnOnSwing;
-                    room1AC.fanSpeedN = AC.fanSpeedN;
-                    room1AC.setToTemp = AC.setToTemp;
+                    room1AC.copy_AC(AC.turnOn, AC.turnOnSwing, AC.fanSpeedN, AC.setToTemp);
                     break;
+                    /*
+                case 2:
+                    room2AC.copy_AC(AC.turnOn, AC.turnOnSwing, AC.fanSpeedN, AC.setToTemp);
+                    break;
+                case 3:
+                    room3AC.copy_AC(AC.turnOn, AC.turnOnSwing, AC.fanSpeedN, AC.setToTemp);
+                    break;
+                case 4:
+                    room4AC.copy_AC(AC.turnOn, AC.turnOnSwing, AC.fanSpeedN, AC.setToTemp);
+                    break;
+                    */
+            }
+        }
+
+        private void Changed_Aircon(object sender, EventArgs e)
+        {
+            AirconController AC = sender as AirconController;
+
+            Color color = new Color();
+            if (AC.turnOn == false)
+                color = Color.White;
+            else
+                color = Color.Blue;
+
+            switch(AC.roomN)
+            {
+                case 1:
+                    방1에어컨.BackColor = color;
+                    break;
+                    /*
+                case 2:
+                    방2에어컨.BackColor = color;
+                    break;
+                case 3:
+                    방3에어컨.BackColor = color;
+                    break;
+                case 4:
+                    방4에어컨.BackColor = color;
+                    break;
+                    */
             }
         }
 
         private void 방1에어컨_Click(object sender, EventArgs e)//방1의 에어컨 컨트롤러 오픈
         {
-            AirconController AC = new AirconController();
-            AC.Owner = this;
-            AC.AC_Changed(room1AC);
-            AC.Changed += new EventHandler(roomAC_Changed);
-            AC.Show();
+            if (isstart == true)
+            {
+                AirconController AC = new AirconController();
+                AC.Owner = this;
+                AC.AC_Changed(room1AC);
+                AC.roomAC_Changed += new EventHandler(roomAC_Changed);
+                AC.Changed_Aircon += new EventHandler(Changed_Aircon);
+                AC.Show();
+            }
         }
 
         private void SettingData_Click(object sender, EventArgs e)//환경변수 설정
@@ -179,6 +221,21 @@ namespace EnvironmentalSimulation
         {
             if (isstart == false)
             {
+                //계절과 온도에 따라서 에어컨 전력 등 설정
+                /*room1AC.EV_Check(seasondatalb.Text, 온도);
+                room2AC.EV_Check(seasondatalb.Text, 온도);
+                room3AC.EV_Check(seasondatalb.Text, 온도);
+                room4AC.EV_Check(seasondatalb.Text, 온도);*/
+                if(room1AC.turnOn ==  false)
+                    방1에어컨.BackColor = Color.White;
+                /*
+                if(room2AC.turnOn ==  false)
+                    방2에어컨.BackColor = Color.White;
+                if(room3AC.turnOn ==  false)
+                    방3에어컨.BackColor = Color.White;
+                if(room4AC.turnOn ==  false)
+                    방4에어컨.BackColor = Color.White;
+                */
                 setTime.Start();
                 isstart = true;
             }
@@ -190,6 +247,10 @@ namespace EnvironmentalSimulation
                 방2.BackColor = Color.FromArgb(192, 255, 255);
                 방3.BackColor= Color.FromArgb(192, 255, 255);
                 방4.BackColor= Color.FromArgb(192, 255, 255);
+                방1에어컨.BackColor = Color.Blue;/*
+                방2에어컨.BackColor = Color.Blue;
+                방3에어컨.BackColor = Color.Blue;
+                방4에어컨.BackColor = Color.Blue;*/
             }
         }
 
