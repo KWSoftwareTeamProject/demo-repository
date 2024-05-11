@@ -13,25 +13,33 @@ namespace EnvironmentalSimulation
 {
     public partial class AirCleanerController : Form
     {
-        public EventHandler Changed;
+        private const int INTERVAL = 15;    // 타이머 설정 간격
 
-        private Form1 form1;
-        private int curDust;
-        private bool powerOn;
-        private bool auto;
+        private Aircleaner aircleaner;
 
-        public AirCleanerController()
+        private bool nightOn;
+        private bool timerOn;
+        private bool autoOn;
+
+        private int timer;
+        private int i;
+
+        public AirCleanerController(Aircleaner aircleaner)
         {
             InitializeComponent();
+            this.aircleaner = aircleaner;
+            timer1.Start();
+
+            nightOn = false;
+            timerOn = false;
+            autoOn = false;
+
+            timer = 0;
+            i = 0;
         }
 
-        private void AirCleaner_Shown(object sender, EventArgs e)
+        private void AirCleanerController_Shown(object sender, EventArgs e)
         {
-            form1 = sender as Form1;
-
-            powerOn = false;
-            auto = false;
-
             Graphics g = this.CreateGraphics();
             SolidBrush brush = new SolidBrush(Color.DarkGray);
 
@@ -42,85 +50,167 @@ namespace EnvironmentalSimulation
             rdoHigh.BackColor = Color.DarkGray;            
         }
 
-        private void PowerOff()
-        {
-
-        }
-
-        private void PowerOn(RadioButton rdoBtn)
-        {
-
-        }
-
         private void btnPower_Click(object sender, EventArgs e)
         {
-            RadioButton checkedRdoBtn = Change();
-
-            if (checkedRdoBtn == null) PowerOff();
-            else PowerOn(checkedRdoBtn);
-
-
-        }
-
-        private RadioButton Change()
-        {
+            aircleaner.PowerOn();
             if (rdoLow.Checked)
             {
-                rdoMid.Checked = true;
-                return rdoMid;
+                ChangeMode(2);
             }
             else if (rdoMid.Checked)
             {
-                rdoHigh.Checked = true;
-                return rdoHigh;
+                ChangeMode(3);
             }
             else if (rdoHigh.Checked)
             {
-                rdoHigh.Checked = false;
-                return null;
+                ChangeMode(0);
+                aircleaner.PowerOff();
             }
             else
             {
-                rdoLow.Checked = true;
-                return rdoLow;
+                ChangeMode(1);
+            }
+
+            nightOn = false;
+        }
+
+        private void btnNight_Click(object sender, EventArgs e)
+        {
+            if (nightOn)
+            {
+                ChangeMode(0);
+                aircleaner.PowerOff();
+                nightOn = false;
+            }
+            else
+            {
+                ChangeMode(4);
+                aircleaner.PowerOn();
+                nightOn = true;
+                btnNight.BackColor = Color.Red;
+            }
+        }
+
+        private void btnTimer_Click(object sender, EventArgs e)
+        {
+            aircleaner.PowerOn();
+            timerOn = true;
+            timer += INTERVAL;
+        }
+
+        private void btnAuto_Click(object sender, EventArgs e)
+        {
+            if (autoOn)
+            {
+                aircleaner.PowerOff();
+                autoOn = false;
+                ChangeMode(0);
+            }
+            else
+            {
+                aircleaner.PowerOn();
+                autoOn = true;
+                nightOn = false;
             }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Generate_dusts();
-        }
+            int fineDust = aircleaner.GetFineDust();
+            if (fineDust > 75)
+                lblPMSensor.BackColor = Color.Black;
+            else if (fineDust > 35)
+                lblPMSensor.BackColor = Color.Red;
+            else if (fineDust > 15)
+                lblPMSensor.BackColor = Color.Green;
+            else
+                lblPMSensor.BackColor = Color.Blue;
 
-        private void Generate_dusts()
-        {
-            Random rand = new Random();
-            Graphics g = this.CreateGraphics();
-
-            for (int i = 0; i < 400; i++)
-            {
-                int X = rand.Next(1, 100);
-
-            }
+            if (timerOn) Timer();
+            if (autoOn) Auto();
         }
 
         private void Timer()
         {
+            if (i == 10)
+            {
+                timer--;
+                i = 0;
+            }
+            i++;
 
+            if (timer == 0)
+            {
+                nightOn = false;
+                timerOn = false;
+                autoOn = false;
+                ChangeMode(0);
+                aircleaner.PowerOff();
+            }
+
+            StringBuilder stringBuilder = new StringBuilder();
+            int hour = timer / 60;
+            int minute = timer % 60;
+
+            if (hour < 10)
+                stringBuilder.Append("0");
+            stringBuilder.Append(hour);
+            stringBuilder.Append(":");
+            if (minute < 10)
+                stringBuilder.Append("0");
+            stringBuilder.Append(minute);
+
+            btnTimer.Text = stringBuilder.ToString();
         }
 
-        private void btnNight_Click(object sender, EventArgs e)
+        private void Auto()
         {
-
+            int fineDust = aircleaner.GetFineDust();
+            if (fineDust > 35)
+            {
+                ChangeMode(3);
+            }
+            else if (fineDust > 15)
+            {
+                ChangeMode(2);
+            }
+            else
+            {
+                ChangeMode(4);
+            }
         }
 
-        private void btnTimer_Click(object sender, EventArgs e)
+        private void ChangeMode(int modeIndex)
         {
+            rdoLow.Checked = false;
+            rdoMid.Checked = false;
+            rdoHigh.Checked = false;
 
+            switch(modeIndex)
+            {
+                case 1:
+                    rdoLow.Checked = true;
+                    aircleaner.SetMode(1);
+                    break;
+                case 2:
+                    rdoMid.Checked = true;
+                    aircleaner.SetMode(2);
+                    break;
+                case 3:
+                    rdoHigh.Checked = true;
+                    aircleaner.SetMode(3);
+                    break;
+                case 4:
+                    aircleaner.SetMode(4);
+                    break;
+            }
+
+            aircleaner.SetMode(modeIndex);
         }
 
-        private void btnAuto_Click(object sender, EventArgs e)
+        private void AirCleanerController_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            timer1.Stop();
         }
     }
 }

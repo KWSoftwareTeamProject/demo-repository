@@ -36,8 +36,8 @@
             this.rdoLow = new System.Windows.Forms.RadioButton();
             this.rdoMid = new System.Windows.Forms.RadioButton();
             this.rdoHigh = new System.Windows.Forms.RadioButton();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblPMSensor = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btnNight
@@ -118,11 +118,6 @@
             this.rdoHigh.TabStop = true;
             this.rdoHigh.UseVisualStyleBackColor = true;
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // lblPMSensor
             // 
             this.lblPMSensor.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -130,6 +125,10 @@
             this.lblPMSensor.Name = "lblPMSensor";
             this.lblPMSensor.Size = new System.Drawing.Size(196, 32);
             this.lblPMSensor.TabIndex = 8;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // AirCleanerController
             // 
@@ -147,7 +146,8 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AirCleanerController";
             this.Text = "AirCleaner";
-            this.Shown += new System.EventHandler(this.AirCleaner_Shown);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AirCleanerController_FormClosing);
+            this.Shown += new System.EventHandler(this.AirCleanerController_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,7 +162,7 @@
         private System.Windows.Forms.RadioButton rdoLow;
         private System.Windows.Forms.RadioButton rdoMid;
         private System.Windows.Forms.RadioButton rdoHigh;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblPMSensor;
+        private System.Windows.Forms.Timer timer1;
     }
 }

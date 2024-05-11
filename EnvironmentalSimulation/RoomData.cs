@@ -9,15 +9,15 @@ namespace EnvironmentalSimulation
 {
     public class RoomData
     {
-        private float fineDust;//방의 농도
+        private int fineDust;//방의 농도
         private float degree;//방의 온도
         private bool lightonoff;
         public RoomData() { 
-            fineDust = 25;//여기에 미세먼지 농도 설정 부탁
+            fineDust = 57;
             degree = 36.5f;
             lightonoff = false;
         }
-        public void setFineDust(float setting)
+        public void setFineDust(int setting)
         {
             fineDust = setting;
         }
@@ -29,7 +29,7 @@ namespace EnvironmentalSimulation
         {
             lightonoff = onoff;
         }
-        public float getFineDust()
+        public int getFineDust()
         {
             return fineDust;
         }
