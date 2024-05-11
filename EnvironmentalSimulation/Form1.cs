@@ -262,6 +262,14 @@ namespace EnvironmentalSimulation
             }
         }
 
-  
+        private void 난방_Click(object sender, EventArgs e)
+        {
+            if (isstart == true)
+            {
+                HeaterController HC = new HeaterController();
+                HC.Owner = this;
+                HC.Show();
+            }
+        }
     }
 }
