@@ -29,6 +29,9 @@ namespace EnvironmentalSimulation
         public bool isstart = false;//모든건 이게 true여야만 실행됨
 
         public Aircon room1AC = new Aircon(1);//방 1의 에어컨 클래스
+        public Aircon room2AC = new Aircon(1);//방 2의 에어컨 클래스
+        public Aircon room3AC = new Aircon(1);//방 3의 에어컨 클래스
+        public Aircon room4AC = new Aircon(1);//방 4의 에어컨 클래스
 
         public Aircleaner room1Aircleaner;
         public Aircleaner room2Aircleaner;
