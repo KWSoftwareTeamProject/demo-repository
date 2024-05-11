@@ -36,7 +36,7 @@
             this.rdoLow = new System.Windows.Forms.RadioButton();
             this.rdoMid = new System.Windows.Forms.RadioButton();
             this.rdoHigh = new System.Windows.Forms.RadioButton();
-            this.PMSensor = new System.Windows.Forms.Button();
+            this.lblPMSensor = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
@@ -44,20 +44,20 @@
             // 
             this.btnNight.BackgroundImage = global::EnvironmentalSimulation.Properties.Resources.moon;
             this.btnNight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnNight.Location = new System.Drawing.Point(78, 208);
-            this.btnNight.Margin = new System.Windows.Forms.Padding(6);
+            this.btnNight.Location = new System.Drawing.Point(48, 130);
+            this.btnNight.Margin = new System.Windows.Forms.Padding(4);
             this.btnNight.Name = "btnNight";
-            this.btnNight.Size = new System.Drawing.Size(111, 120);
+            this.btnNight.Size = new System.Drawing.Size(68, 75);
             this.btnNight.TabIndex = 0;
             this.btnNight.UseVisualStyleBackColor = true;
             this.btnNight.Click += new System.EventHandler(this.btnNight_Click);
             // 
             // btnAuto
             // 
-            this.btnAuto.Location = new System.Drawing.Point(368, 208);
-            this.btnAuto.Margin = new System.Windows.Forms.Padding(6);
+            this.btnAuto.Location = new System.Drawing.Point(226, 130);
+            this.btnAuto.Margin = new System.Windows.Forms.Padding(4);
             this.btnAuto.Name = "btnAuto";
-            this.btnAuto.Size = new System.Drawing.Size(111, 120);
+            this.btnAuto.Size = new System.Drawing.Size(68, 75);
             this.btnAuto.TabIndex = 1;
             this.btnAuto.Text = "Auto";
             this.btnAuto.UseVisualStyleBackColor = true;
@@ -65,10 +65,10 @@
             // 
             // btnTimer
             // 
-            this.btnTimer.Location = new System.Drawing.Point(227, 208);
-            this.btnTimer.Margin = new System.Windows.Forms.Padding(6);
+            this.btnTimer.Location = new System.Drawing.Point(140, 130);
+            this.btnTimer.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimer.Name = "btnTimer";
-            this.btnTimer.Size = new System.Drawing.Size(111, 120);
+            this.btnTimer.Size = new System.Drawing.Size(68, 75);
             this.btnTimer.TabIndex = 2;
             this.btnTimer.Text = "00:00";
             this.btnTimer.UseVisualStyleBackColor = true;
@@ -76,10 +76,10 @@
             // 
             // btnPower
             // 
-            this.btnPower.Location = new System.Drawing.Point(193, 432);
-            this.btnPower.Margin = new System.Windows.Forms.Padding(6);
+            this.btnPower.Location = new System.Drawing.Point(119, 270);
+            this.btnPower.Margin = new System.Windows.Forms.Padding(4);
             this.btnPower.Name = "btnPower";
-            this.btnPower.Size = new System.Drawing.Size(175, 84);
+            this.btnPower.Size = new System.Drawing.Size(108, 52);
             this.btnPower.TabIndex = 3;
             this.btnPower.Text = "Power";
             this.btnPower.UseVisualStyleBackColor = true;
@@ -88,10 +88,10 @@
             // rdoLow
             // 
             this.rdoLow.AutoSize = true;
-            this.rdoLow.Location = new System.Drawing.Point(210, 394);
-            this.rdoLow.Margin = new System.Windows.Forms.Padding(6);
+            this.rdoLow.Location = new System.Drawing.Point(129, 246);
+            this.rdoLow.Margin = new System.Windows.Forms.Padding(4);
             this.rdoLow.Name = "rdoLow";
-            this.rdoLow.Size = new System.Drawing.Size(27, 26);
+            this.rdoLow.Size = new System.Drawing.Size(17, 16);
             this.rdoLow.TabIndex = 4;
             this.rdoLow.TabStop = true;
             this.rdoLow.UseVisualStyleBackColor = true;
@@ -99,10 +99,10 @@
             // rdoMid
             // 
             this.rdoMid.AutoSize = true;
-            this.rdoMid.Location = new System.Drawing.Point(267, 394);
-            this.rdoMid.Margin = new System.Windows.Forms.Padding(6);
+            this.rdoMid.Location = new System.Drawing.Point(164, 246);
+            this.rdoMid.Margin = new System.Windows.Forms.Padding(4);
             this.rdoMid.Name = "rdoMid";
-            this.rdoMid.Size = new System.Drawing.Size(27, 26);
+            this.rdoMid.Size = new System.Drawing.Size(17, 16);
             this.rdoMid.TabIndex = 5;
             this.rdoMid.TabStop = true;
             this.rdoMid.UseVisualStyleBackColor = true;
@@ -110,34 +110,32 @@
             // rdoHigh
             // 
             this.rdoHigh.AutoSize = true;
-            this.rdoHigh.Location = new System.Drawing.Point(325, 394);
-            this.rdoHigh.Margin = new System.Windows.Forms.Padding(6);
+            this.rdoHigh.Location = new System.Drawing.Point(200, 246);
+            this.rdoHigh.Margin = new System.Windows.Forms.Padding(4);
             this.rdoHigh.Name = "rdoHigh";
-            this.rdoHigh.Size = new System.Drawing.Size(27, 26);
+            this.rdoHigh.Size = new System.Drawing.Size(17, 16);
             this.rdoHigh.TabIndex = 6;
             this.rdoHigh.TabStop = true;
             this.rdoHigh.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // lblPMSensor
             // 
-            this.PMSensor.Enabled = false;
-            this.PMSensor.Location = new System.Drawing.Point(74, 62);
-            this.PMSensor.Margin = new System.Windows.Forms.Padding(4);
-            this.PMSensor.Name = "PMSensor";
-            this.PMSensor.Size = new System.Drawing.Size(196, 32);
-            this.PMSensor.TabIndex = 7;
-            this.PMSensor.UseVisualStyleBackColor = true;
+            this.lblPMSensor.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblPMSensor.Location = new System.Drawing.Point(74, 62);
+            this.lblPMSensor.Name = "lblPMSensor";
+            this.lblPMSensor.Size = new System.Drawing.Size(196, 32);
+            this.lblPMSensor.TabIndex = 8;
             // 
             // timer1
             // 
-            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // AirCleanerController
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(553, 590);
+            this.ClientSize = new System.Drawing.Size(340, 369);
+            this.Controls.Add(this.lblPMSensor);
             this.Controls.Add(this.rdoHigh);
             this.Controls.Add(this.rdoMid);
             this.Controls.Add(this.rdoLow);
@@ -145,10 +143,11 @@
             this.Controls.Add(this.btnTimer);
             this.Controls.Add(this.btnAuto);
             this.Controls.Add(this.btnNight);
-            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AirCleanerController";
             this.Text = "AirCleaner";
-            this.Shown += new System.EventHandler(this.AirCleaner_Shown);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AirCleanerController_FormClosing);
+            this.Shown += new System.EventHandler(this.AirCleanerController_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,7 +162,7 @@
         private System.Windows.Forms.RadioButton rdoLow;
         private System.Windows.Forms.RadioButton rdoMid;
         private System.Windows.Forms.RadioButton rdoHigh;
-        private System.Windows.Forms.Button PMSensor;
+        private System.Windows.Forms.Label lblPMSensor;
         private System.Windows.Forms.Timer timer1;
     }
 }

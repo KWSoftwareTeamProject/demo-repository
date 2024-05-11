@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,6 +30,11 @@ namespace EnvironmentalSimulation
 
         public Aircon room1AC = new Aircon(1);//방 1의 에어컨 클래스
 
+        public Aircleaner room1Aircleaner;
+        public Aircleaner room2Aircleaner;
+        public Aircleaner room3Aircleaner;
+        public Aircleaner room4Aircleaner;
+
         public Form1()
         {
             InitializeComponent();
@@ -36,15 +42,31 @@ namespace EnvironmentalSimulation
             Room2data=new RoomData();
             Room3data=new RoomData();
             Room4data=new RoomData();
+
+            room1Aircleaner = new Aircleaner(Room1data);
+            room2Aircleaner = new Aircleaner(Room2data);
+            room3Aircleaner = new Aircleaner(Room3data);
+            room4Aircleaner = new Aircleaner(Room4data);
         }
 
         private void 공기청정기_Click(object sender, EventArgs e)
         {
-            AirCleanerController airCleaner = new AirCleanerController
+            if (isstart)
             {
-                Owner = this
-            };
-            airCleaner.Show();
+                AirCleanerController airCleanerController;
+                if (sender == 방1공기청정기)
+                    airCleanerController = new AirCleanerController(room1Aircleaner);
+                /*else if (sender == 방2공기청정기)
+                    airCleanerController = new AirCleanerController(room2Aircleaner);
+                */
+                else if (sender == 방3공기청정기)
+                    airCleanerController = new AirCleanerController(room3Aircleaner);
+                else
+                    airCleanerController = new AirCleanerController(room4Aircleaner);
+
+                airCleanerController.Owner = this;
+                airCleanerController.Show();
+            }
         }
 
         private void 방1전등_Click(object sender, EventArgs e)
@@ -75,14 +97,19 @@ namespace EnvironmentalSimulation
        
         private void setTime_Tick(object sender, EventArgs e)//시간 작동 (작동이 안되어 있을 시 시간 변동 x)
         {
-           if(Room1data.getlightonoff()==false)//방1의 전등이 on 되어 있을때 작동
+            if(Room1data.getlightonoff()==false)//방1의 전등이 on 되어 있을때 작동
             {
                 방1.BackColor = currentDateColor;
                 방2.BackColor = currentDateColor;
                 방3.BackColor = currentDateColor;
                 방4.BackColor = currentDateColor;
-
             }
+
+            room1Aircleaner.Update();
+            room2Aircleaner.Update();
+            room3Aircleaner.Update();
+            room4Aircleaner.Update();
+
             timedatalb.Text = dayTime.ToString();
             rmlbset();
         }
@@ -189,27 +216,10 @@ namespace EnvironmentalSimulation
             seasondatalb.Text = seasondata;
             timedatalb.Text = timedata;
 
-            float fineDust;
-            switch (season) // 계절에 따라 미세먼지 초기화
-            {
-                case "봄":
-                    fineDust = 25;
-                    break;
-                case "여름":
-                    fineDust = 16;
-                    break;
-                case "가을":
-                    fineDust = 15;
-                    break;
-                default:
-                    fineDust = 29;
-                    break;
-            }
-
-            Room1data.setFineDust(fineDust);
-            Room2data.setFineDust(fineDust);
-            Room3data.setFineDust(fineDust);
-            Room4data.setFineDust(fineDust);
+            room1Aircleaner.SetSeason(season);
+            room2Aircleaner.SetSeason(season);
+            room3Aircleaner.SetSeason(season);
+            room4Aircleaner.SetSeason(season);
         }
 
         private void timestartbt_Click(object sender, EventArgs e)
