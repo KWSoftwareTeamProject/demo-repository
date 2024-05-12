@@ -140,21 +140,13 @@ namespace EnvironmentalSimulation
         private void Auto()
         {
             if (curFineDust > 35)
-            {
-                modeIndex = 3;
-            }
+                SetMode(3);
             else if (curFineDust > 20)
-            {
-                modeIndex = 2;
-            }
+                SetMode(2);
             else if (curFineDust > 15)
-            {
-                modeIndex = 1;
-            }
+                SetMode(1);
             else
-            {
-                modeIndex = 4;
-            }
+                SetMode(4);
         }
 
         public void SetMode(int modeIndex)
