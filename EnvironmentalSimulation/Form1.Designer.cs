@@ -48,6 +48,10 @@
             this.방3전등 = new System.Windows.Forms.Button();
             this.방3공기청정기 = new System.Windows.Forms.Button();
             this.방2 = new System.Windows.Forms.GroupBox();
+            this.방2난방 = new System.Windows.Forms.Button();
+            this.방2전등 = new System.Windows.Forms.Button();
+            this.방2에어컨 = new System.Windows.Forms.Button();
+            this.방2공기청정기 = new System.Windows.Forms.Button();
             this.rm2degree = new System.Windows.Forms.Label();
             this.rm2finedust = new System.Windows.Forms.Label();
             this.rm2dgdata = new System.Windows.Forms.Label();
@@ -70,10 +74,6 @@
             this.timedatalb = new System.Windows.Forms.Label();
             this.hourlb = new System.Windows.Forms.Label();
             this.timestartbt = new System.Windows.Forms.Button();
-            this.방2공기청정기 = new System.Windows.Forms.Button();
-            this.방2에어컨 = new System.Windows.Forms.Button();
-            this.방2전등 = new System.Windows.Forms.Button();
-            this.방2난방 = new System.Windows.Forms.Button();
             this.방4.SuspendLayout();
             this.방3.SuspendLayout();
             this.방2.SuspendLayout();
@@ -305,6 +305,51 @@
             this.방2.TabStop = false;
             this.방2.Text = "방2";
             // 
+            // 방2난방
+            // 
+            this.방2난방.BackColor = System.Drawing.Color.Red;
+            this.방2난방.Location = new System.Drawing.Point(234, 174);
+            this.방2난방.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.방2난방.Name = "방2난방";
+            this.방2난방.Size = new System.Drawing.Size(22, 56);
+            this.방2난방.TabIndex = 8;
+            this.방2난방.Text = "난방";
+            this.방2난방.UseVisualStyleBackColor = false;
+            this.방2난방.Click += new System.EventHandler(this.난방_Click);
+            // 
+            // 방2전등
+            // 
+            this.방2전등.BackColor = System.Drawing.Color.Yellow;
+            this.방2전등.Location = new System.Drawing.Point(234, 114);
+            this.방2전등.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.방2전등.Name = "방2전등";
+            this.방2전등.Size = new System.Drawing.Size(22, 56);
+            this.방2전등.TabIndex = 8;
+            this.방2전등.Text = "전등";
+            this.방2전등.UseVisualStyleBackColor = false;
+            // 
+            // 방2에어컨
+            // 
+            this.방2에어컨.BackColor = System.Drawing.Color.Blue;
+            this.방2에어컨.Location = new System.Drawing.Point(125, 19);
+            this.방2에어컨.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.방2에어컨.Name = "방2에어컨";
+            this.방2에어컨.Size = new System.Drawing.Size(131, 40);
+            this.방2에어컨.TabIndex = 8;
+            this.방2에어컨.Text = "에어컨";
+            this.방2에어컨.UseVisualStyleBackColor = false;
+            // 
+            // 방2공기청정기
+            // 
+            this.방2공기청정기.BackColor = System.Drawing.Color.Lime;
+            this.방2공기청정기.Location = new System.Drawing.Point(6, 76);
+            this.방2공기청정기.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.방2공기청정기.Name = "방2공기청정기";
+            this.방2공기청정기.Size = new System.Drawing.Size(88, 160);
+            this.방2공기청정기.TabIndex = 8;
+            this.방2공기청정기.Text = "공기청정기";
+            this.방2공기청정기.UseVisualStyleBackColor = false;
+            // 
             // rm2degree
             // 
             this.rm2degree.AutoSize = true;
@@ -514,51 +559,6 @@
             this.timestartbt.Text = "시작/정지";
             this.timestartbt.UseVisualStyleBackColor = true;
             this.timestartbt.Click += new System.EventHandler(this.timestartbt_Click);
-            // 
-            // 방2공기청정기
-            // 
-            this.방2공기청정기.BackColor = System.Drawing.Color.Lime;
-            this.방2공기청정기.Location = new System.Drawing.Point(6, 76);
-            this.방2공기청정기.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.방2공기청정기.Name = "방2공기청정기";
-            this.방2공기청정기.Size = new System.Drawing.Size(88, 160);
-            this.방2공기청정기.TabIndex = 8;
-            this.방2공기청정기.Text = "공기청정기";
-            this.방2공기청정기.UseVisualStyleBackColor = false;
-            // 
-            // 방2에어컨
-            // 
-            this.방2에어컨.BackColor = System.Drawing.Color.Blue;
-            this.방2에어컨.Location = new System.Drawing.Point(125, 19);
-            this.방2에어컨.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.방2에어컨.Name = "방2에어컨";
-            this.방2에어컨.Size = new System.Drawing.Size(131, 40);
-            this.방2에어컨.TabIndex = 8;
-            this.방2에어컨.Text = "에어컨";
-            this.방2에어컨.UseVisualStyleBackColor = false;
-            // 
-            // 방2전등
-            // 
-            this.방2전등.BackColor = System.Drawing.Color.Yellow;
-            this.방2전등.Location = new System.Drawing.Point(234, 114);
-            this.방2전등.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.방2전등.Name = "방2전등";
-            this.방2전등.Size = new System.Drawing.Size(22, 56);
-            this.방2전등.TabIndex = 8;
-            this.방2전등.Text = "전등";
-            this.방2전등.UseVisualStyleBackColor = false;
-            // 
-            // 방2난방
-            // 
-            this.방2난방.BackColor = System.Drawing.Color.Red;
-            this.방2난방.Location = new System.Drawing.Point(234, 174);
-            this.방2난방.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.방2난방.Name = "방2난방";
-            this.방2난방.Size = new System.Drawing.Size(22, 56);
-            this.방2난방.TabIndex = 8;
-            this.방2난방.Text = "난방";
-            this.방2난방.UseVisualStyleBackColor = false;
-            this.방2난방.Click += new System.EventHandler(this.난방_Click);
             // 
             // Form1
             // 

@@ -28,30 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gBox = new System.Windows.Forms.GroupBox();
             this.lblTemp = new System.Windows.Forms.Label();
             this.btnUp = new System.Windows.Forms.Button();
             this.btnDown = new System.Windows.Forms.Button();
             this.btnPower = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.gBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gBox
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.groupBox1.Controls.Add(this.lblTemp);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(410, 218);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
+            this.gBox.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.gBox.Controls.Add(this.lblTemp);
+            this.gBox.Location = new System.Drawing.Point(12, 12);
+            this.gBox.Name = "gBox";
+            this.gBox.Size = new System.Drawing.Size(410, 218);
+            this.gBox.TabIndex = 0;
+            this.gBox.TabStop = false;
             // 
             // lblTemp
             // 
             this.lblTemp.Font = new System.Drawing.Font("굴림", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblTemp.Location = new System.Drawing.Point(0, 0);
+            this.lblTemp.Location = new System.Drawing.Point(0, 39);
             this.lblTemp.Name = "lblTemp";
-            this.lblTemp.Size = new System.Drawing.Size(410, 218);
+            this.lblTemp.Size = new System.Drawing.Size(410, 141);
             this.lblTemp.TabIndex = 0;
             this.lblTemp.Text = "18";
             this.lblTemp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -84,6 +84,7 @@
             this.btnPower.TabIndex = 3;
             this.btnPower.Text = "POWER";
             this.btnPower.UseVisualStyleBackColor = true;
+            this.btnPower.Click += new System.EventHandler(this.btnPower_Click);
             // 
             // HeaterController
             // 
@@ -93,17 +94,18 @@
             this.Controls.Add(this.btnPower);
             this.Controls.Add(this.btnDown);
             this.Controls.Add(this.btnUp);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gBox);
             this.Name = "HeaterController";
             this.Text = "HeaterController";
-            this.groupBox1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.HeaterController_Load);
+            this.gBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gBox;
         private System.Windows.Forms.Label lblTemp;
         private System.Windows.Forms.Button btnUp;
         private System.Windows.Forms.Button btnDown;

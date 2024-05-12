@@ -212,5 +212,10 @@ namespace EnvironmentalSimulation
         {
             timer1.Stop();
         }
+
+        private void AirCleanerController_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

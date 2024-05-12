@@ -44,20 +44,20 @@
             // 
             this.btnNight.BackgroundImage = global::EnvironmentalSimulation.Properties.Resources.moon;
             this.btnNight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnNight.Location = new System.Drawing.Point(48, 130);
-            this.btnNight.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNight.Location = new System.Drawing.Point(42, 104);
+            this.btnNight.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnNight.Name = "btnNight";
-            this.btnNight.Size = new System.Drawing.Size(68, 75);
+            this.btnNight.Size = new System.Drawing.Size(60, 60);
             this.btnNight.TabIndex = 0;
             this.btnNight.UseVisualStyleBackColor = true;
             this.btnNight.Click += new System.EventHandler(this.btnNight_Click);
             // 
             // btnAuto
             // 
-            this.btnAuto.Location = new System.Drawing.Point(226, 130);
-            this.btnAuto.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAuto.Location = new System.Drawing.Point(198, 104);
+            this.btnAuto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAuto.Name = "btnAuto";
-            this.btnAuto.Size = new System.Drawing.Size(68, 75);
+            this.btnAuto.Size = new System.Drawing.Size(60, 60);
             this.btnAuto.TabIndex = 1;
             this.btnAuto.Text = "Auto";
             this.btnAuto.UseVisualStyleBackColor = true;
@@ -65,10 +65,10 @@
             // 
             // btnTimer
             // 
-            this.btnTimer.Location = new System.Drawing.Point(140, 130);
-            this.btnTimer.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTimer.Location = new System.Drawing.Point(122, 104);
+            this.btnTimer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnTimer.Name = "btnTimer";
-            this.btnTimer.Size = new System.Drawing.Size(68, 75);
+            this.btnTimer.Size = new System.Drawing.Size(60, 60);
             this.btnTimer.TabIndex = 2;
             this.btnTimer.Text = "00:00";
             this.btnTimer.UseVisualStyleBackColor = true;
@@ -76,10 +76,10 @@
             // 
             // btnPower
             // 
-            this.btnPower.Location = new System.Drawing.Point(119, 270);
-            this.btnPower.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPower.Location = new System.Drawing.Point(104, 216);
+            this.btnPower.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnPower.Name = "btnPower";
-            this.btnPower.Size = new System.Drawing.Size(108, 52);
+            this.btnPower.Size = new System.Drawing.Size(94, 42);
             this.btnPower.TabIndex = 3;
             this.btnPower.Text = "Power";
             this.btnPower.UseVisualStyleBackColor = true;
@@ -88,10 +88,10 @@
             // rdoLow
             // 
             this.rdoLow.AutoSize = true;
-            this.rdoLow.Location = new System.Drawing.Point(129, 246);
-            this.rdoLow.Margin = new System.Windows.Forms.Padding(4);
+            this.rdoLow.Location = new System.Drawing.Point(113, 197);
+            this.rdoLow.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.rdoLow.Name = "rdoLow";
-            this.rdoLow.Size = new System.Drawing.Size(17, 16);
+            this.rdoLow.Size = new System.Drawing.Size(14, 13);
             this.rdoLow.TabIndex = 4;
             this.rdoLow.TabStop = true;
             this.rdoLow.UseVisualStyleBackColor = true;
@@ -99,10 +99,10 @@
             // rdoMid
             // 
             this.rdoMid.AutoSize = true;
-            this.rdoMid.Location = new System.Drawing.Point(164, 246);
-            this.rdoMid.Margin = new System.Windows.Forms.Padding(4);
+            this.rdoMid.Location = new System.Drawing.Point(144, 197);
+            this.rdoMid.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.rdoMid.Name = "rdoMid";
-            this.rdoMid.Size = new System.Drawing.Size(17, 16);
+            this.rdoMid.Size = new System.Drawing.Size(14, 13);
             this.rdoMid.TabIndex = 5;
             this.rdoMid.TabStop = true;
             this.rdoMid.UseVisualStyleBackColor = true;
@@ -110,10 +110,10 @@
             // rdoHigh
             // 
             this.rdoHigh.AutoSize = true;
-            this.rdoHigh.Location = new System.Drawing.Point(200, 246);
-            this.rdoHigh.Margin = new System.Windows.Forms.Padding(4);
+            this.rdoHigh.Location = new System.Drawing.Point(175, 197);
+            this.rdoHigh.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.rdoHigh.Name = "rdoHigh";
-            this.rdoHigh.Size = new System.Drawing.Size(17, 16);
+            this.rdoHigh.Size = new System.Drawing.Size(14, 13);
             this.rdoHigh.TabIndex = 6;
             this.rdoHigh.TabStop = true;
             this.rdoHigh.UseVisualStyleBackColor = true;
@@ -121,9 +121,9 @@
             // lblPMSensor
             // 
             this.lblPMSensor.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblPMSensor.Location = new System.Drawing.Point(74, 62);
+            this.lblPMSensor.Location = new System.Drawing.Point(65, 50);
             this.lblPMSensor.Name = "lblPMSensor";
-            this.lblPMSensor.Size = new System.Drawing.Size(196, 32);
+            this.lblPMSensor.Size = new System.Drawing.Size(172, 26);
             this.lblPMSensor.TabIndex = 8;
             // 
             // timer1
@@ -132,9 +132,9 @@
             // 
             // AirCleanerController
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(340, 369);
+            this.ClientSize = new System.Drawing.Size(298, 295);
             this.Controls.Add(this.lblPMSensor);
             this.Controls.Add(this.rdoHigh);
             this.Controls.Add(this.rdoMid);
@@ -143,10 +143,11 @@
             this.Controls.Add(this.btnTimer);
             this.Controls.Add(this.btnAuto);
             this.Controls.Add(this.btnNight);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "AirCleanerController";
             this.Text = "AirCleaner";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AirCleanerController_FormClosing);
+            this.Load += new System.EventHandler(this.AirCleanerController_Load);
             this.Shown += new System.EventHandler(this.AirCleanerController_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
