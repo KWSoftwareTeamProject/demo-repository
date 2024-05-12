@@ -38,6 +38,11 @@ namespace EnvironmentalSimulation
         public Aircleaner room3Aircleaner;
         public Aircleaner room4Aircleaner;
 
+        public Heater room1Heater;
+        public Heater room2Heater;
+        public Heater room3Heater;
+        public Heater room4Heater;
+
         public Form1()
         {
             InitializeComponent();
@@ -50,6 +55,11 @@ namespace EnvironmentalSimulation
             room2Aircleaner = new Aircleaner(Room2data);
             room3Aircleaner = new Aircleaner(Room3data);
             room4Aircleaner = new Aircleaner(Room4data);
+
+            room1Heater = new Heater(Room1data);
+            room2Heater = new Heater(Room2data);
+            room3Heater = new Heater(Room3data);
+            room4Heater = new Heater(Room4data);
         }
 
         private void 공기청정기_Click(object sender, EventArgs e)
@@ -262,6 +272,14 @@ namespace EnvironmentalSimulation
             }
         }
 
-  
+        private void 난방_Click(object sender, EventArgs e)
+        {
+            if (isstart == true)
+            {
+                HeaterController HC = new HeaterController();
+                HC.Owner = this;
+                HC.Show();
+            }
+        }
     }
 }
