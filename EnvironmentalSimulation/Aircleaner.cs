@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -20,6 +21,12 @@ namespace EnvironmentalSimulation
         private int modeIndex;
 
         private bool powerOn;
+        private bool nightOn;
+        private bool timerOn;
+        private bool autoOn;
+
+        private int timer;
+        private int i;
 
         public Aircleaner(RoomData room)
         {
@@ -29,10 +36,22 @@ namespace EnvironmentalSimulation
             maxFineDust = curFineDust;
             minFineDust = curFineDust;
 
-            varFineDust = new float[5] { 0.03f, -0.1f, -0.15f, -0.2f, -0.05f };   // { x, 약, 중, 강, Night mode }
+            varFineDust = new float[5] {    // 모드에 따른 미세먼지 증감량
+                0.03f,  // Off
+                -0.1f,  // Low
+                -0.15f, // Mid
+                -0.2f,  // High
+                -0.05f  // Night mode
+            };
+
             modeIndex = 0;
 
             powerOn = false;
+            timerOn = false;
+            autoOn = false;
+
+            timer = 0;
+            i = 0;
         }
 
         public void SetSeason(string season)
@@ -59,6 +78,8 @@ namespace EnvironmentalSimulation
 
         public void Update()    // Form1.cs 타이머에서 호출
         {
+            if (IsTimerOn()) Timer();
+            if (IsAutoOn()) Auto();
             UpdateFineDust();
             room.setFineDust((int)curFineDust);
         }
@@ -82,25 +103,68 @@ namespace EnvironmentalSimulation
                 default:
                     minFineDust = maxFineDust;
                     break;
-            }
+            }   // 모드에 따라 최소 미세먼지 설정
 
-            if (curFineDust + varFineDust[modeIndex] > maxFineDust)
+            if (curFineDust + varFineDust[modeIndex] > maxFineDust) // 미세먼지 상한
             {
                 curFineDust = maxFineDust;
             }
-            else if (curFineDust + varFineDust[modeIndex] < minFineDust)
+            else if (curFineDust + varFineDust[modeIndex] < minFineDust)    // 미세먼지 하한
             {
                 curFineDust += varFineDust[0];
             }
-            else
+            else // 모드에 따른 미세먼지 증감
             {
                 curFineDust += varFineDust[modeIndex];
+            }
+        }
+
+        private void Timer()
+        {
+            if (i == 10)
+            {
+                timer--;
+                i = 0;
+            }
+            i++;
+
+            if (timer == 0)
+            {
+                timerOn = false;
+                autoOn = false;
+                SetMode(0);
+                PowerOff();
+            }
+        }
+
+        private void Auto()
+        {
+            if (curFineDust > 35)
+            {
+                modeIndex = 3;
+            }
+            else if (curFineDust > 20)
+            {
+                modeIndex = 2;
+            }
+            else if (curFineDust > 15)
+            {
+                modeIndex = 1;
+            }
+            else
+            {
+                modeIndex = 4;
             }
         }
 
         public void SetMode(int modeIndex)
         {
             this.modeIndex = modeIndex;
+        }
+
+        public int GetMode()
+        {
+            return modeIndex;
         }
 
         public void PowerOn()
@@ -111,6 +175,69 @@ namespace EnvironmentalSimulation
         public void PowerOff()
         {
             powerOn = false;
+        }
+
+        public bool IsNightOn()
+        {
+            return nightOn;
+        }
+
+        public void NightOnOff()
+        {
+            if (IsNightOn())
+            {
+                SetMode(0);
+                PowerOff();
+                nightOn = false;
+            }
+            else
+            {
+                SetMode(4);
+                PowerOn();
+                nightOn = true;
+            }
+        }
+
+        public void NightOff()
+        {
+            nightOn = false;
+        }
+
+        public bool IsTimerOn()
+        {
+            return timerOn;
+        }
+
+        public void TimerOn(int interval)
+        {
+            timerOn = true;
+            timer += interval;
+        }
+
+        public int GetTimer()
+        {
+            return timer;
+        }
+
+        private bool IsAutoOn()
+        {
+            return autoOn;
+        }
+
+        public void AutoOnOff()
+        {
+            if (IsAutoOn())
+            {
+                PowerOff();
+                autoOn = false;
+                SetMode(0);
+            }
+            else
+            {
+                PowerOn();
+                autoOn = true;
+                nightOn = false;
+            }
         }
 
         public int GetFineDust()
