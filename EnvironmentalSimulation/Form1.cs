@@ -69,9 +69,8 @@ namespace EnvironmentalSimulation
                 AirCleanerController airCleanerController;
                 if (sender == 방1공기청정기)
                     airCleanerController = new AirCleanerController(room1Aircleaner);
-                /*else if (sender == 방2공기청정기)
+                else if (sender == 방2공기청정기)
                     airCleanerController = new AirCleanerController(room2Aircleaner);
-                */
                 else if (sender == 방3공기청정기)
                     airCleanerController = new AirCleanerController(room3Aircleaner);
                 else
