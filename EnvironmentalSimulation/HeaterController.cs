@@ -12,11 +12,27 @@ namespace EnvironmentalSimulation
 {
     public partial class HeaterController : Form
     {
-        public bool power;
+        private RoomData roomData;
+        private bool power = false;
 
         public HeaterController()
         {
             InitializeComponent();
+        }
+
+        public void SetRoomData(RoomData data)
+        {
+            roomData = data;
+            UpdateRoomData();
+        }
+
+        private void UpdateRoomData()
+        {
+            if (roomData != null)
+            {
+                lblTemp.Text = roomData.getDegree().ToString();
+                // 필요에 따라 다른 데이터를 업데이트할 수도 있습니다.
+            }
         }
 
         private void HeaterOn()
@@ -31,6 +47,7 @@ namespace EnvironmentalSimulation
             gBox.BackColor = Color.FromArgb(160, 160, 160);
             btnUp.Click -= btnUp_Click;
             btnDown.Click -= btnDown_Click;
+
         }
 
         private void HeaterController_Load(object sender, EventArgs e)
@@ -47,12 +64,40 @@ namespace EnvironmentalSimulation
                 HeaterOn();
             }
             else
-            {               
+            {
+                
                 power = false;
-                HeaterOff();               
+                HeaterOff();            
             }
         }
 
+        private void btnUp_Click(object sender, EventArgs e)
+        {
+            if (roomData != null)
+            {
+                float newDegree = roomData.getDegree() + 0.5f;
+                if (newDegree <= 40)
+                {
+                    roomData.setDegree(newDegree);
+                    UpdateRoomData();
+                }
+            }
+        }
+
+        private void btnDown_Click(object sender, EventArgs e)
+        {
+            if (roomData != null)
+            {
+                float newDegree = roomData.getDegree() - 0.5f;
+                if (newDegree >= 18)
+                {
+                    roomData.setDegree(newDegree);
+                    UpdateRoomData();
+                }
+            }
+        }
+
+        /*
         private void btnUp_Click(object sender, EventArgs e)
         {
             int currentTemp;
@@ -88,5 +133,6 @@ namespace EnvironmentalSimulation
                 }
             }
         }
+        */
     }
 }

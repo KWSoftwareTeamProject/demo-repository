@@ -277,6 +277,24 @@ namespace EnvironmentalSimulation
             {
                 HeaterController HC = new HeaterController();
                 HC.Owner = this;
+
+                if (sender == 방1난방)
+                {
+                    HC.SetRoomData(Room1data);
+                }
+                else if (sender == 방2난방)
+                {
+                    HC.SetRoomData(Room2data);
+                }
+                else if (sender == 방3난방)
+                {
+                    HC.SetRoomData(Room3data);
+                }
+                else if (sender == 방4난방)
+                {
+                    HC.SetRoomData(Room4data);
+                }
+
                 HC.Show();
             }
         }
