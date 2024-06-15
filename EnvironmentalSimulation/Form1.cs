@@ -184,6 +184,31 @@ namespace EnvironmentalSimulation
             room3Aircleaner.UpdateTimeAccel(istimeaccel);
             room4Aircleaner.UpdateTimeAccel(istimeaccel);
 
+            room1AC.EV_Check(Room1data.getDegree());
+            room2AC.EV_Check(Room2data.getDegree());
+            room3AC.EV_Check(Room3data.getDegree());
+            room4AC.EV_Check(Room4data.getDegree());
+
+            if(isstart == true)
+            {
+                if(room1AC.turnOn == true)
+                    방1에어컨.BackColor = Color.Blue;
+                else
+                    방1에어컨.BackColor = Color.White;
+                if (room2AC.turnOn == true)
+                    방2에어컨.BackColor = Color.Blue;
+                else
+                    방2에어컨.BackColor = Color.White;
+                if (room3AC.turnOn == true)
+                    방3에어컨.BackColor = Color.Blue;
+                else
+                    방3에어컨.BackColor = Color.White;
+                if (room4AC.turnOn == true)
+                    방4에어컨.BackColor = Color.Blue;
+                else
+                    방4에어컨.BackColor = Color.White;
+            }
+
             int texttime = (int)dayTime;
             timedatalb.Text = texttime.ToString() + " 시";
 
@@ -423,10 +448,10 @@ namespace EnvironmentalSimulation
                 timestartbt.ForeColor = Color.Red;
                 lightfunction();
                 //계절과 온도에 따라서 에어컨 전력 등 설정
-                room1AC.EV_Check(seasondatalb.Text/*, 온도*/);
-                room2AC.EV_Check(seasondatalb.Text/*, 온도*/);
-                room3AC.EV_Check(seasondatalb.Text/*, 온도*/);
-                room4AC.EV_Check(seasondatalb.Text/*, 온도*/);
+                room1AC.EV_Check(Room1data.getDegree());
+                room2AC.EV_Check(Room2data.getDegree());
+                room3AC.EV_Check(Room3data.getDegree());
+                room4AC.EV_Check(Room4data.getDegree());
                 if (room1AC.turnOn == false)
                     방1에어컨.BackColor = Color.White;
                 if (room2AC.turnOn == false)
@@ -446,10 +471,10 @@ namespace EnvironmentalSimulation
                 setTime.Stop();
                 time1second.Stop();
 
-                방1에어컨.BackColor = Color.Blue;/*
+                방1에어컨.BackColor = Color.Blue;
                 방2에어컨.BackColor = Color.Blue;
                 방3에어컨.BackColor = Color.Blue;
-                방4에어컨.BackColor = Color.Blue;*/
+                방4에어컨.BackColor = Color.Blue;
                 resetvalue();
 
             }
