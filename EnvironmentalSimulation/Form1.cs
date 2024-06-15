@@ -337,6 +337,7 @@ namespace EnvironmentalSimulation
             if (isstart == false)//꺼져있을 경우 실행
             {
                 timestartbt.ForeColor = Color.Red;
+                lightfunction();
                 //계절과 온도에 따라서 에어컨 전력 등 설정
                 room1AC.EV_Check(seasondatalb.Text/*, 온도*/);
                 room2AC.EV_Check(seasondatalb.Text/*, 온도*/);
@@ -417,31 +418,11 @@ namespace EnvironmentalSimulation
             }
         }
 
-        
-        private void realtimesetting()//환경변수 끝날때 설정//시간 다르게 설정?
-        {
-            if (season == "봄")
-            {
-                SunUp = 7f;
-                SunDown = 18.5f;
-            } else if (season =="여름")
-            {
-                SunUp = 5.5f;
-                SunDown = 19.5f;
-            }else if(season=="가을")
-            {
-                SunUp = 7f;
-                SunDown = 18.5f;
-            }else if(season=="겨울")
-            {
-                SunUp = 8f;
-                SunDown = 17f;
-            }
-        }
 
-        private void lightfunction()//함수적용 다시할 필요 있음//나중에 자동모드일때만 설정하도록 바꿀것
+        private void lightfunction()
         {
-            currentDateColor = Color.FromArgb(255, 255, (int)(130-120*Math.Cos(2*Math.PI*dayTime/24)));
+            //currentDateColor = Color.FromArgb(255, 255, (int)(130-120*Math.Cos(2*Math.PI*dayTime/24)));
+            currentDateColor = Color.FromArgb((int)(130 - 100 * Math.Cos(2 * Math.PI * dayTime / 24)), (int)(130 - 100 * Math.Cos(2 * Math.PI * dayTime / 24)), 10);
         }
 
         private void time1second_Tick(object sender, EventArgs e)
@@ -461,8 +442,7 @@ namespace EnvironmentalSimulation
                     dayTime = 0;
                 }
 
-                realtimesetting();
-                lightfunction();
+                lightfunction();//계절별 시간 고려 필요
             }
         }
 
