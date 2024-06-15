@@ -183,6 +183,7 @@
             this.방4에어컨.TabIndex = 4;
             this.방4에어컨.Text = "에어컨";
             this.방4에어컨.UseVisualStyleBackColor = false;
+            this.방4에어컨.Click += new System.EventHandler(this.방4에어컨_Click);
             // 
             // 방3
             // 
@@ -233,6 +234,7 @@
             this.방3에어컨.TabIndex = 8;
             this.방3에어컨.Text = "에어컨";
             this.방3에어컨.UseVisualStyleBackColor = false;
+            this.방3에어컨.Click += new System.EventHandler(this.방3에어컨_Click);
             // 
             // rm3fddata
             // 
@@ -343,6 +345,7 @@
             this.방2에어컨.TabIndex = 8;
             this.방2에어컨.Text = "에어컨";
             this.방2에어컨.UseVisualStyleBackColor = false;
+            this.방2에어컨.Click += new System.EventHandler(this.방2에어컨_Click);
             // 
             // 방2공기청정기
             // 

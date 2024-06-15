@@ -32,9 +32,9 @@ namespace EnvironmentalSimulation
         public bool isstart = false;//모든건 이게 true여야만 실행됨
 
         public Aircon room1AC = new Aircon(1);//방 1의 에어컨 클래스
-        public Aircon room2AC = new Aircon(1);//방 2의 에어컨 클래스
-        public Aircon room3AC = new Aircon(1);//방 3의 에어컨 클래스
-        public Aircon room4AC = new Aircon(1);//방 4의 에어컨 클래스
+        public Aircon room2AC = new Aircon(2);//방 2의 에어컨 클래스
+        public Aircon room3AC = new Aircon(3);//방 3의 에어컨 클래스
+        public Aircon room4AC = new Aircon(4);//방 4의 에어컨 클래스
 
         public Aircleaner room1Aircleaner;
         public Aircleaner room2Aircleaner;
@@ -257,7 +257,6 @@ namespace EnvironmentalSimulation
                 case 1:
                     room1AC.copy_AC(AC.turnOn, AC.turnOnSwing, AC.fanSpeedN, AC.setToTemp);
                     break;
-                    /*
                 case 2:
                     room2AC.copy_AC(AC.turnOn, AC.turnOnSwing, AC.fanSpeedN, AC.setToTemp);
                     break;
@@ -267,7 +266,6 @@ namespace EnvironmentalSimulation
                 case 4:
                     room4AC.copy_AC(AC.turnOn, AC.turnOnSwing, AC.fanSpeedN, AC.setToTemp);
                     break;
-                    */
             }
         }
 
@@ -286,7 +284,6 @@ namespace EnvironmentalSimulation
                 case 1:
                     방1에어컨.BackColor = color;
                     break;
-                    /*
                 case 2:
                     방2에어컨.BackColor = color;
                     break;
@@ -296,7 +293,6 @@ namespace EnvironmentalSimulation
                 case 4:
                     방4에어컨.BackColor = color;
                     break;
-                    */
             }
         }
 
@@ -342,20 +338,18 @@ namespace EnvironmentalSimulation
             {
                 timestartbt.ForeColor = Color.Red;
                 //계절과 온도에 따라서 에어컨 전력 등 설정
-                /*room1AC.EV_Check(seasondatalb.Text, 온도);
-                room2AC.EV_Check(seasondatalb.Text, 온도);
-                room3AC.EV_Check(seasondatalb.Text, 온도);
-                room4AC.EV_Check(seasondatalb.Text, 온도);*/
+                room1AC.EV_Check(seasondatalb.Text/*, 온도*/);
+                room2AC.EV_Check(seasondatalb.Text/*, 온도*/);
+                room3AC.EV_Check(seasondatalb.Text/*, 온도*/);
+                room4AC.EV_Check(seasondatalb.Text/*, 온도*/);
                 if(room1AC.turnOn ==  false)
                     방1에어컨.BackColor = Color.White;
-                /*
                 if(room2AC.turnOn ==  false)
                     방2에어컨.BackColor = Color.White;
                 if(room3AC.turnOn ==  false)
                     방3에어컨.BackColor = Color.White;
                 if(room4AC.turnOn ==  false)
                     방4에어컨.BackColor = Color.White;
-                */
                 setTime.Start();
                 time1second.Start();
                 isstart = true;
@@ -372,6 +366,7 @@ namespace EnvironmentalSimulation
                 방3에어컨.BackColor = Color.Blue;
                 방4에어컨.BackColor = Color.Blue;*/
                 resetvalue();
+
             }
         }
 
@@ -400,6 +395,24 @@ namespace EnvironmentalSimulation
             {
                 HeaterController HC = new HeaterController();
                 HC.Owner = this;
+
+                if (sender == 방1난방)
+                {
+                    HC.SetRoomData(Room1data);
+                }
+                else if (sender == 방2난방)
+                {
+                    HC.SetRoomData(Room2data);
+                }
+                else if (sender == 방3난방)
+                {
+                    HC.SetRoomData(Room3data);
+                }
+                else if (sender == 방4난방)
+                {
+                    HC.SetRoomData(Room4data);
+                }
+
                 HC.Show();
             }
         }
@@ -464,6 +477,42 @@ namespace EnvironmentalSimulation
             {
                 istimeaccel = false;
                 timeaccel.ForeColor = Color.Black;
+        private void 방2에어컨_Click(object sender, EventArgs e)
+        {
+            if (isstart == true)
+            {
+                AirconController AC = new AirconController();
+                AC.Owner = this;
+                AC.AC_Changed(room2AC);
+                AC.roomAC_Changed += new EventHandler(roomAC_Changed);
+                AC.Changed_Aircon += new EventHandler(Changed_Aircon);
+                AC.Show();
+            }
+        }
+
+        private void 방3에어컨_Click(object sender, EventArgs e)
+        {
+            if (isstart == true)
+            {
+                AirconController AC = new AirconController();
+                AC.Owner = this;
+                AC.AC_Changed(room3AC);
+                AC.roomAC_Changed += new EventHandler(roomAC_Changed);
+                AC.Changed_Aircon += new EventHandler(Changed_Aircon);
+                AC.Show();
+            }
+        }
+
+        private void 방4에어컨_Click(object sender, EventArgs e)
+        {
+            if (isstart == true)
+            {
+                AirconController AC = new AirconController();
+                AC.Owner = this;
+                AC.AC_Changed(room4AC);
+                AC.roomAC_Changed += new EventHandler(roomAC_Changed);
+                AC.Changed_Aircon += new EventHandler(Changed_Aircon);
+                AC.Show();
             }
         }
     }
