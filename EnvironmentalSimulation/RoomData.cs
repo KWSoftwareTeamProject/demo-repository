@@ -13,8 +13,8 @@ namespace EnvironmentalSimulation
         private float degree;//방의 온도
         private bool lightonoff;
         public RoomData() { 
-            fineDust = 57;
-            degree = 36.5f;
+            fineDust = 0;
+            degree = 0;
             lightonoff = false;
         }
         public void setFineDust(int setting)
