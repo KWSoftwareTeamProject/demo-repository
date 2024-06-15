@@ -468,15 +468,17 @@ namespace EnvironmentalSimulation
 
         private void timeaccel_Click(object sender, EventArgs e)
         {
-            if(istimeaccel==false)
+            if (istimeaccel == false)
             {
                 istimeaccel = true;
-                timeaccel.ForeColor=Color.Red;
+                timeaccel.ForeColor = Color.Red;
             }
             else
             {
                 istimeaccel = false;
                 timeaccel.ForeColor = Color.Black;
+            }
+        }
         private void 방2에어컨_Click(object sender, EventArgs e)
         {
             if (isstart == true)
@@ -517,3 +519,5 @@ namespace EnvironmentalSimulation
         }
     }
 }
+
+      
