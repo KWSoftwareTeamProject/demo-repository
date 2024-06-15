@@ -25,11 +25,12 @@ namespace EnvironmentalSimulation
         public RoomData Room3data;//방 3의 데이터 (온도, 미세먼지)
         public RoomData Room4data;//방 4의 데이터 (온도, 미세먼지)
 
-        public string season="봄";//계절
-        public float dayTime=0;//시간
+        public string season = "봄";//계절
+        public float dayTime = 0;//시간
         //시간 관련 변수 만들어서 변경할 거 필요
 
         public bool isstart = false;//모든건 이게 true여야만 실행됨
+        public int lastTemperatureChangeHour = -1; // 마지막으로 온도를 변경한 시간
 
         public Aircon room1AC = new Aircon(1);//방 1의 에어컨 클래스
         public Aircon room2AC = new Aircon(2);//방 2의 에어컨 클래스
@@ -105,11 +106,13 @@ namespace EnvironmentalSimulation
                 {
                     LC.ButtonInfo = 2;
                     LC.ChangeLight += new EventHandler(Change_Light2);
-                } else if (((Button)sender).Name == "방3전등")
+                }
+                else if (((Button)sender).Name == "방3전등")
                 {
                     LC.ButtonInfo = 3;
                     LC.ChangeLight += new EventHandler(Change_Light3);
-                } else if (((Button)sender).Name == "방4전등")
+                }
+                else if (((Button)sender).Name == "방4전등")
                 {
                     LC.ButtonInfo = 4;
                     LC.ChangeLight += new EventHandler(Change_Light4);
@@ -120,10 +123,10 @@ namespace EnvironmentalSimulation
 
         private void Change_Light1(object sender, EventArgs e)//컨트롤러에서 인자 전달(방1 전등)
         {
-            
-                LightController Lc = sender as LightController;
-                Color Lightness = Lc.GetLightnessValue();
-                방1.BackColor = Lightness;
+
+            LightController Lc = sender as LightController;
+            Color Lightness = Lc.GetLightnessValue();
+            방1.BackColor = Lightness;
         }
         private void Change_Light2(object sender, EventArgs e)//컨트롤러에서 인자 전달(방2 전등)
         {
@@ -182,11 +185,52 @@ namespace EnvironmentalSimulation
             room4Aircleaner.UpdateTimeAccel(istimeaccel);
 
             int texttime = (int)dayTime;
-            timedatalb.Text = texttime.ToString()+" 시";
+            timedatalb.Text = texttime.ToString() + " 시";
+
+            if ((texttime == 12 || texttime == 13 || texttime == 14 || texttime == 15) && lastTemperatureChangeHour != texttime)
+            {
+                IncreaseTemperature();
+                lastTemperatureChangeHour = texttime; // 마지막으로 온도를 변경한 시간 기록
+            }
+            else if ((texttime == 16 || texttime == 17 || texttime == 18 || texttime == 19) && lastTemperatureChangeHour != texttime)
+            {
+                DecreaseTemperature();
+                lastTemperatureChangeHour = texttime; // 마지막으로 온도를 변경한 시간 기록
+            }
+
             rmlbset();
         }
 
-        private void presettinglight() {
+        private void IncreaseTemperature()
+        {
+            Room1data.setDegree(Room1data.getDegree() + 1);
+            Room2data.setDegree(Room2data.getDegree() + 1);
+            Room3data.setDegree(Room3data.getDegree() + 1);
+            Room4data.setDegree(Room4data.getDegree() + 1);
+
+            UpdateTemperatureLabels();
+        }
+
+        private void DecreaseTemperature()
+        {
+            Room1data.setDegree(Room1data.getDegree() - 1);
+            Room2data.setDegree(Room2data.getDegree() - 1);
+            Room3data.setDegree(Room3data.getDegree() - 1);
+            Room4data.setDegree(Room4data.getDegree() - 1);
+
+            UpdateTemperatureLabels();
+        }
+
+        private void UpdateTemperatureLabels()
+        {
+            rm1dgdata.Text = Room1data.getDegree().ToString();
+            rm2dgdata.Text = Room2data.getDegree().ToString();
+            rm3dgdata.Text = Room3data.getDegree().ToString();
+            rm4dgdata.Text = Room4data.getDegree().ToString();
+        }
+
+        private void presettinglight()
+        {
             if (Room1data.getlightonoff() == false)//of일떄 기본으로 세팅
             {
                 방1.BackColor = currentDateColor;
@@ -252,7 +296,7 @@ namespace EnvironmentalSimulation
         private void roomAC_Changed(object obj, EventArgs e)//에어컨 컨트롤러를 닫을 때 컨트롤러의 마지막 정보를 폼1에 저장
         {
             AirconController AC = obj as AirconController;
-            switch(AC.roomN)
+            switch (AC.roomN)
             {
                 case 1:
                     room1AC.copy_AC(AC.turnOn, AC.turnOnSwing, AC.fanSpeedN, AC.setToTemp);
@@ -279,7 +323,7 @@ namespace EnvironmentalSimulation
             else
                 color = Color.Blue;
 
-            switch(AC.roomN)
+            switch (AC.roomN)
             {
                 case 1:
                     방1에어컨.BackColor = color;
@@ -311,15 +355,53 @@ namespace EnvironmentalSimulation
 
         private void SettingData_Click(object sender, EventArgs e)//환경변수 설정
         {
-            EnvironmentalChange EC=new EnvironmentalChange();
+            EnvironmentalChange EC = new EnvironmentalChange();
             EC.Owner = this;
             EC.settingDatahandler += new EventHandler(setting_dataset);
             EC.Show();
         }
-        private void setting_dataset(object sender, EventArgs e)//환경변수 폼에서 받아와서 텍스트에 작성
+
+        private void SetRoomTemperatures(string season)
+        {
+            Random rand = new Random();
+            int temperature;
+
+            switch (season)
+            {
+                case "봄":
+                    temperature = 15 + rand.Next(-5, 6);
+                    break;
+                case "여름":
+                    temperature = 25 + rand.Next(-5, 6);
+                    break;
+                case "가을":
+                    temperature = 15 + rand.Next(-5, 6);
+                    break;
+                case "겨울":
+                    temperature = 5 + rand.Next(-5, 6);
+                    break;
+                default:
+                    temperature = 20 + rand.Next(-5, 6);
+                    break;
+            }
+
+            // 각 방의 온도를 baseTemperature ± 5 범위 내에서 랜덤하게 설정
+            Room1data.setDegree(temperature);
+            Room2data.setDegree(temperature);
+            Room3data.setDegree(temperature);
+            Room4data.setDegree(temperature);
+
+            rm1dgdata.Text = Room1data.getDegree().ToString();
+            rm2dgdata.Text = Room2data.getDegree().ToString();
+            rm3dgdata.Text = Room3data.getDegree().ToString();
+            rm4dgdata.Text = Room4data.getDegree().ToString();
+        }
+
+
+        private void setting_dataset(object sender, EventArgs e)
         {
             EnvironmentalChange EC = sender as EnvironmentalChange;
-            string seasondata=EC.getseasonData();
+            string seasondata = EC.getseasonData();
             string timedata = EC.gettimeData();
             season = seasondata;
             dayTime = Int32.Parse(timedata);
@@ -330,6 +412,8 @@ namespace EnvironmentalSimulation
             room2Aircleaner.SetSeason(season);
             room3Aircleaner.SetSeason(season);
             room4Aircleaner.SetSeason(season);
+
+            SetRoomTemperatures(season); // 각 방의 온도를 설정하는 메서드 호출
         }
 
         private void timestartbt_Click(object sender, EventArgs e)
@@ -343,13 +427,13 @@ namespace EnvironmentalSimulation
                 room2AC.EV_Check(seasondatalb.Text/*, 온도*/);
                 room3AC.EV_Check(seasondatalb.Text/*, 온도*/);
                 room4AC.EV_Check(seasondatalb.Text/*, 온도*/);
-                if(room1AC.turnOn ==  false)
+                if (room1AC.turnOn == false)
                     방1에어컨.BackColor = Color.White;
-                if(room2AC.turnOn ==  false)
+                if (room2AC.turnOn == false)
                     방2에어컨.BackColor = Color.White;
-                if(room3AC.turnOn ==  false)
+                if (room3AC.turnOn == false)
                     방3에어컨.BackColor = Color.White;
-                if(room4AC.turnOn ==  false)
+                if (room4AC.turnOn == false)
                     방4에어컨.BackColor = Color.White;
                 setTime.Start();
                 time1second.Start();
@@ -361,7 +445,7 @@ namespace EnvironmentalSimulation
                 isstart = false;
                 setTime.Stop();
                 time1second.Stop();
-              
+
                 방1에어컨.BackColor = Color.Blue;/*
                 방2에어컨.BackColor = Color.Blue;
                 방3에어컨.BackColor = Color.Blue;
@@ -427,9 +511,9 @@ namespace EnvironmentalSimulation
 
         private void time1second_Tick(object sender, EventArgs e)
         {
-            if(isstart==true)
+            if (isstart == true)
             {
-                if(istimeaccel==false)
+                if (istimeaccel == false)
                 {
                     dayTime += 0.1f;
                 }
@@ -437,7 +521,7 @@ namespace EnvironmentalSimulation
                 {
                     dayTime += 1;
                 }
-                if(dayTime>24)
+                if (dayTime > 24)
                 {
                     dayTime = 0;
                 }
@@ -500,4 +584,3 @@ namespace EnvironmentalSimulation
     }
 }
 
-      

@@ -93,11 +93,11 @@
             this.방4.Controls.Add(this.rm4dgdata);
             this.방4.Controls.Add(this.방4전등);
             this.방4.Controls.Add(this.방4에어컨);
-            this.방4.Location = new System.Drawing.Point(349, 396);
+            this.방4.Location = new System.Drawing.Point(305, 317);
             this.방4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.방4.Name = "방4";
             this.방4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.방4.Size = new System.Drawing.Size(299, 300);
+            this.방4.Size = new System.Drawing.Size(262, 240);
             this.방4.TabIndex = 7;
             this.방4.TabStop = false;
             this.방4.Text = "방4";
@@ -106,9 +106,9 @@
             // 
             this.rm4degree.AutoSize = true;
             this.rm4degree.ForeColor = System.Drawing.Color.Red;
-            this.rm4degree.Location = new System.Drawing.Point(37, 246);
+            this.rm4degree.Location = new System.Drawing.Point(32, 197);
             this.rm4degree.Name = "rm4degree";
-            this.rm4degree.Size = new System.Drawing.Size(37, 15);
+            this.rm4degree.Size = new System.Drawing.Size(29, 12);
             this.rm4degree.TabIndex = 15;
             this.rm4degree.Text = "온도";
             // 
@@ -116,19 +116,19 @@
             // 
             this.rm4finedust.AutoSize = true;
             this.rm4finedust.ForeColor = System.Drawing.Color.Red;
-            this.rm4finedust.Location = new System.Drawing.Point(14, 268);
+            this.rm4finedust.Location = new System.Drawing.Point(12, 214);
             this.rm4finedust.Name = "rm4finedust";
-            this.rm4finedust.Size = new System.Drawing.Size(67, 15);
+            this.rm4finedust.Size = new System.Drawing.Size(53, 12);
             this.rm4finedust.TabIndex = 14;
             this.rm4finedust.Text = "미세먼지";
             // 
             // 방4공기청정기
             // 
             this.방4공기청정기.BackColor = System.Drawing.Color.Lime;
-            this.방4공기청정기.Location = new System.Drawing.Point(6, 22);
+            this.방4공기청정기.Location = new System.Drawing.Point(5, 18);
             this.방4공기청정기.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.방4공기청정기.Name = "방4공기청정기";
-            this.방4공기청정기.Size = new System.Drawing.Size(101, 200);
+            this.방4공기청정기.Size = new System.Drawing.Size(88, 160);
             this.방4공기청정기.TabIndex = 4;
             this.방4공기청정기.Text = "공기청정기";
             this.방4공기청정기.UseVisualStyleBackColor = false;
@@ -138,19 +138,19 @@
             // 
             this.rm4fddata.AutoSize = true;
             this.rm4fddata.ForeColor = System.Drawing.Color.Red;
-            this.rm4fddata.Location = new System.Drawing.Point(107, 268);
+            this.rm4fddata.Location = new System.Drawing.Point(94, 214);
             this.rm4fddata.Name = "rm4fddata";
-            this.rm4fddata.Size = new System.Drawing.Size(15, 15);
+            this.rm4fddata.Size = new System.Drawing.Size(11, 12);
             this.rm4fddata.TabIndex = 13;
             this.rm4fddata.Text = "0";
             // 
             // 방4난방
             // 
             this.방4난방.BackColor = System.Drawing.Color.Red;
-            this.방4난방.Location = new System.Drawing.Point(267, 96);
+            this.방4난방.Location = new System.Drawing.Point(234, 77);
             this.방4난방.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.방4난방.Name = "방4난방";
-            this.방4난방.Size = new System.Drawing.Size(25, 70);
+            this.방4난방.Size = new System.Drawing.Size(22, 56);
             this.방4난방.TabIndex = 4;
             this.방4난방.Text = "난방";
             this.방4난방.UseVisualStyleBackColor = false;
@@ -159,19 +159,19 @@
             // 
             this.rm4dgdata.AutoSize = true;
             this.rm4dgdata.ForeColor = System.Drawing.Color.Red;
-            this.rm4dgdata.Location = new System.Drawing.Point(87, 246);
+            this.rm4dgdata.Location = new System.Drawing.Point(94, 197);
             this.rm4dgdata.Name = "rm4dgdata";
-            this.rm4dgdata.Size = new System.Drawing.Size(36, 15);
+            this.rm4dgdata.Size = new System.Drawing.Size(11, 12);
             this.rm4dgdata.TabIndex = 12;
-            this.rm4dgdata.Text = "36.5";
+            this.rm4dgdata.Text = "0";
             // 
             // 방4전등
             // 
             this.방4전등.BackColor = System.Drawing.Color.Yellow;
-            this.방4전등.Location = new System.Drawing.Point(267, 22);
+            this.방4전등.Location = new System.Drawing.Point(234, 18);
             this.방4전등.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.방4전등.Name = "방4전등";
-            this.방4전등.Size = new System.Drawing.Size(25, 70);
+            this.방4전등.Size = new System.Drawing.Size(22, 56);
             this.방4전등.TabIndex = 4;
             this.방4전등.Text = "전등";
             this.방4전등.UseVisualStyleBackColor = false;
@@ -180,10 +180,10 @@
             // 방4에어컨
             // 
             this.방4에어컨.BackColor = System.Drawing.Color.Blue;
-            this.방4에어컨.Location = new System.Drawing.Point(143, 246);
+            this.방4에어컨.Location = new System.Drawing.Point(125, 197);
             this.방4에어컨.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.방4에어컨.Name = "방4에어컨";
-            this.방4에어컨.Size = new System.Drawing.Size(150, 50);
+            this.방4에어컨.Size = new System.Drawing.Size(131, 40);
             this.방4에어컨.TabIndex = 4;
             this.방4에어컨.Text = "에어컨";
             this.방4에어컨.UseVisualStyleBackColor = false;
@@ -201,11 +201,11 @@
             this.방3.Controls.Add(this.rm3dgdata);
             this.방3.Controls.Add(this.방3전등);
             this.방3.Controls.Add(this.방3공기청정기);
-            this.방3.Location = new System.Drawing.Point(34, 396);
-            this.방3.Margin = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.방3.Location = new System.Drawing.Point(30, 317);
+            this.방3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.방3.Name = "방3";
             this.방3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.방3.Size = new System.Drawing.Size(299, 300);
+            this.방3.Size = new System.Drawing.Size(262, 240);
             this.방3.TabIndex = 6;
             this.방3.TabStop = false;
             this.방3.Text = "방3";
@@ -214,9 +214,9 @@
             // 
             this.rm3degree.AutoSize = true;
             this.rm3degree.ForeColor = System.Drawing.Color.Red;
-            this.rm3degree.Location = new System.Drawing.Point(203, 246);
+            this.rm3degree.Location = new System.Drawing.Point(178, 197);
             this.rm3degree.Name = "rm3degree";
-            this.rm3degree.Size = new System.Drawing.Size(37, 15);
+            this.rm3degree.Size = new System.Drawing.Size(29, 12);
             this.rm3degree.TabIndex = 11;
             this.rm3degree.Text = "온도";
             // 
@@ -224,19 +224,19 @@
             // 
             this.rm3finedust.AutoSize = true;
             this.rm3finedust.ForeColor = System.Drawing.Color.Red;
-            this.rm3finedust.Location = new System.Drawing.Point(182, 268);
+            this.rm3finedust.Location = new System.Drawing.Point(159, 214);
             this.rm3finedust.Name = "rm3finedust";
-            this.rm3finedust.Size = new System.Drawing.Size(67, 15);
+            this.rm3finedust.Size = new System.Drawing.Size(53, 12);
             this.rm3finedust.TabIndex = 10;
             this.rm3finedust.Text = "미세먼지";
             // 
             // 방3에어컨
             // 
             this.방3에어컨.BackColor = System.Drawing.Color.Blue;
-            this.방3에어컨.Location = new System.Drawing.Point(6, 246);
-            this.방3에어컨.Margin = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.방3에어컨.Location = new System.Drawing.Point(5, 197);
+            this.방3에어컨.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.방3에어컨.Name = "방3에어컨";
-            this.방3에어컨.Size = new System.Drawing.Size(150, 50);
+            this.방3에어컨.Size = new System.Drawing.Size(131, 40);
             this.방3에어컨.TabIndex = 8;
             this.방3에어컨.Text = "에어컨";
             this.방3에어컨.UseVisualStyleBackColor = false;
@@ -246,19 +246,19 @@
             // 
             this.rm3fddata.AutoSize = true;
             this.rm3fddata.ForeColor = System.Drawing.Color.Red;
-            this.rm3fddata.Location = new System.Drawing.Point(277, 268);
+            this.rm3fddata.Location = new System.Drawing.Point(234, 214);
             this.rm3fddata.Name = "rm3fddata";
-            this.rm3fddata.Size = new System.Drawing.Size(15, 15);
+            this.rm3fddata.Size = new System.Drawing.Size(11, 12);
             this.rm3fddata.TabIndex = 9;
             this.rm3fddata.Text = "0";
             // 
             // 방3난방
             // 
             this.방3난방.BackColor = System.Drawing.Color.Red;
-            this.방3난방.Location = new System.Drawing.Point(6, 96);
-            this.방3난방.Margin = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.방3난방.Location = new System.Drawing.Point(5, 77);
+            this.방3난방.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.방3난방.Name = "방3난방";
-            this.방3난방.Size = new System.Drawing.Size(25, 70);
+            this.방3난방.Size = new System.Drawing.Size(22, 56);
             this.방3난방.TabIndex = 7;
             this.방3난방.Text = "난방";
             this.방3난방.UseVisualStyleBackColor = false;
@@ -267,19 +267,19 @@
             // 
             this.rm3dgdata.AutoSize = true;
             this.rm3dgdata.ForeColor = System.Drawing.Color.Red;
-            this.rm3dgdata.Location = new System.Drawing.Point(255, 246);
+            this.rm3dgdata.Location = new System.Drawing.Point(234, 197);
             this.rm3dgdata.Name = "rm3dgdata";
-            this.rm3dgdata.Size = new System.Drawing.Size(36, 15);
+            this.rm3dgdata.Size = new System.Drawing.Size(11, 12);
             this.rm3dgdata.TabIndex = 8;
-            this.rm3dgdata.Text = "36.5";
+            this.rm3dgdata.Text = "0";
             // 
             // 방3전등
             // 
             this.방3전등.BackColor = System.Drawing.Color.Yellow;
-            this.방3전등.Location = new System.Drawing.Point(6, 22);
-            this.방3전등.Margin = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.방3전등.Location = new System.Drawing.Point(5, 18);
+            this.방3전등.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.방3전등.Name = "방3전등";
-            this.방3전등.Size = new System.Drawing.Size(25, 70);
+            this.방3전등.Size = new System.Drawing.Size(22, 56);
             this.방3전등.TabIndex = 6;
             this.방3전등.Text = "전등";
             this.방3전등.UseVisualStyleBackColor = false;
@@ -288,10 +288,10 @@
             // 방3공기청정기
             // 
             this.방3공기청정기.BackColor = System.Drawing.Color.Lime;
-            this.방3공기청정기.Location = new System.Drawing.Point(194, 22);
-            this.방3공기청정기.Margin = new System.Windows.Forms.Padding(5, 2, 5, 2);
+            this.방3공기청정기.Location = new System.Drawing.Point(170, 18);
+            this.방3공기청정기.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.방3공기청정기.Name = "방3공기청정기";
-            this.방3공기청정기.Size = new System.Drawing.Size(101, 200);
+            this.방3공기청정기.Size = new System.Drawing.Size(88, 160);
             this.방3공기청정기.TabIndex = 5;
             this.방3공기청정기.Text = "공기청정기";
             this.방3공기청정기.UseVisualStyleBackColor = false;
@@ -310,11 +310,11 @@
             this.방2.Controls.Add(this.rm2dgdata);
             this.방2.Controls.Add(this.rm2fddata);
             this.방2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.방2.Location = new System.Drawing.Point(349, 92);
+            this.방2.Location = new System.Drawing.Point(305, 74);
             this.방2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.방2.Name = "방2";
             this.방2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.방2.Size = new System.Drawing.Size(299, 300);
+            this.방2.Size = new System.Drawing.Size(262, 240);
             this.방2.TabIndex = 5;
             this.방2.TabStop = false;
             this.방2.Text = "방2";
@@ -322,10 +322,10 @@
             // 방2난방
             // 
             this.방2난방.BackColor = System.Drawing.Color.Red;
-            this.방2난방.Location = new System.Drawing.Point(267, 218);
+            this.방2난방.Location = new System.Drawing.Point(234, 174);
             this.방2난방.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.방2난방.Name = "방2난방";
-            this.방2난방.Size = new System.Drawing.Size(25, 70);
+            this.방2난방.Size = new System.Drawing.Size(22, 56);
             this.방2난방.TabIndex = 8;
             this.방2난방.Text = "난방";
             this.방2난방.UseVisualStyleBackColor = false;
@@ -334,10 +334,10 @@
             // 방2전등
             // 
             this.방2전등.BackColor = System.Drawing.Color.Yellow;
-            this.방2전등.Location = new System.Drawing.Point(267, 142);
+            this.방2전등.Location = new System.Drawing.Point(234, 114);
             this.방2전등.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.방2전등.Name = "방2전등";
-            this.방2전등.Size = new System.Drawing.Size(25, 70);
+            this.방2전등.Size = new System.Drawing.Size(22, 56);
             this.방2전등.TabIndex = 8;
             this.방2전등.Text = "전등";
             this.방2전등.UseVisualStyleBackColor = false;
@@ -346,10 +346,10 @@
             // 방2에어컨
             // 
             this.방2에어컨.BackColor = System.Drawing.Color.Blue;
-            this.방2에어컨.Location = new System.Drawing.Point(143, 24);
+            this.방2에어컨.Location = new System.Drawing.Point(125, 19);
             this.방2에어컨.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.방2에어컨.Name = "방2에어컨";
-            this.방2에어컨.Size = new System.Drawing.Size(150, 50);
+            this.방2에어컨.Size = new System.Drawing.Size(131, 40);
             this.방2에어컨.TabIndex = 8;
             this.방2에어컨.Text = "에어컨";
             this.방2에어컨.UseVisualStyleBackColor = false;
@@ -358,10 +358,10 @@
             // 방2공기청정기
             // 
             this.방2공기청정기.BackColor = System.Drawing.Color.Lime;
-            this.방2공기청정기.Location = new System.Drawing.Point(7, 95);
+            this.방2공기청정기.Location = new System.Drawing.Point(6, 76);
             this.방2공기청정기.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.방2공기청정기.Name = "방2공기청정기";
-            this.방2공기청정기.Size = new System.Drawing.Size(101, 200);
+            this.방2공기청정기.Size = new System.Drawing.Size(88, 160);
             this.방2공기청정기.TabIndex = 8;
             this.방2공기청정기.Text = "공기청정기";
             this.방2공기청정기.UseVisualStyleBackColor = false;
@@ -371,9 +371,9 @@
             // 
             this.rm2degree.AutoSize = true;
             this.rm2degree.ForeColor = System.Drawing.Color.Red;
-            this.rm2degree.Location = new System.Drawing.Point(37, 20);
+            this.rm2degree.Location = new System.Drawing.Point(32, 16);
             this.rm2degree.Name = "rm2degree";
-            this.rm2degree.Size = new System.Drawing.Size(37, 15);
+            this.rm2degree.Size = new System.Drawing.Size(29, 12);
             this.rm2degree.TabIndex = 15;
             this.rm2degree.Text = "온도";
             // 
@@ -381,9 +381,9 @@
             // 
             this.rm2finedust.AutoSize = true;
             this.rm2finedust.ForeColor = System.Drawing.Color.Red;
-            this.rm2finedust.Location = new System.Drawing.Point(14, 42);
+            this.rm2finedust.Location = new System.Drawing.Point(12, 34);
             this.rm2finedust.Name = "rm2finedust";
-            this.rm2finedust.Size = new System.Drawing.Size(67, 15);
+            this.rm2finedust.Size = new System.Drawing.Size(53, 12);
             this.rm2finedust.TabIndex = 14;
             this.rm2finedust.Text = "미세먼지";
             // 
@@ -391,19 +391,19 @@
             // 
             this.rm2dgdata.AutoSize = true;
             this.rm2dgdata.ForeColor = System.Drawing.Color.Red;
-            this.rm2dgdata.Location = new System.Drawing.Point(87, 20);
+            this.rm2dgdata.Location = new System.Drawing.Point(94, 16);
             this.rm2dgdata.Name = "rm2dgdata";
-            this.rm2dgdata.Size = new System.Drawing.Size(36, 15);
+            this.rm2dgdata.Size = new System.Drawing.Size(11, 12);
             this.rm2dgdata.TabIndex = 12;
-            this.rm2dgdata.Text = "36.5";
+            this.rm2dgdata.Text = "0";
             // 
             // rm2fddata
             // 
             this.rm2fddata.AutoSize = true;
             this.rm2fddata.ForeColor = System.Drawing.Color.Red;
-            this.rm2fddata.Location = new System.Drawing.Point(107, 42);
+            this.rm2fddata.Location = new System.Drawing.Point(94, 34);
             this.rm2fddata.Name = "rm2fddata";
-            this.rm2fddata.Size = new System.Drawing.Size(15, 15);
+            this.rm2fddata.Size = new System.Drawing.Size(11, 12);
             this.rm2fddata.TabIndex = 13;
             this.rm2fddata.Text = "0";
             // 
@@ -419,11 +419,11 @@
             this.방1.Controls.Add(this.방1난방);
             this.방1.Controls.Add(this.방1에어컨);
             this.방1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.방1.Location = new System.Drawing.Point(34, 92);
+            this.방1.Location = new System.Drawing.Point(30, 74);
             this.방1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.방1.Name = "방1";
             this.방1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.방1.Size = new System.Drawing.Size(299, 300);
+            this.방1.Size = new System.Drawing.Size(262, 240);
             this.방1.TabIndex = 4;
             this.방1.TabStop = false;
             this.방1.Text = "방1";
@@ -432,9 +432,9 @@
             // 
             this.rm1degree.AutoSize = true;
             this.rm1degree.ForeColor = System.Drawing.Color.Red;
-            this.rm1degree.Location = new System.Drawing.Point(197, 20);
+            this.rm1degree.Location = new System.Drawing.Point(172, 16);
             this.rm1degree.Name = "rm1degree";
-            this.rm1degree.Size = new System.Drawing.Size(37, 15);
+            this.rm1degree.Size = new System.Drawing.Size(29, 12);
             this.rm1degree.TabIndex = 7;
             this.rm1degree.Text = "온도";
             // 
@@ -442,9 +442,9 @@
             // 
             this.rm1finedust.AutoSize = true;
             this.rm1finedust.ForeColor = System.Drawing.Color.Red;
-            this.rm1finedust.Location = new System.Drawing.Point(174, 42);
+            this.rm1finedust.Location = new System.Drawing.Point(152, 34);
             this.rm1finedust.Name = "rm1finedust";
-            this.rm1finedust.Size = new System.Drawing.Size(67, 15);
+            this.rm1finedust.Size = new System.Drawing.Size(53, 12);
             this.rm1finedust.TabIndex = 6;
             this.rm1finedust.Text = "미세먼지";
             // 
@@ -452,9 +452,9 @@
             // 
             this.rm1fddata.AutoSize = true;
             this.rm1fddata.ForeColor = System.Drawing.Color.Red;
-            this.rm1fddata.Location = new System.Drawing.Point(267, 42);
+            this.rm1fddata.Location = new System.Drawing.Point(234, 34);
             this.rm1fddata.Name = "rm1fddata";
-            this.rm1fddata.Size = new System.Drawing.Size(15, 15);
+            this.rm1fddata.Size = new System.Drawing.Size(11, 12);
             this.rm1fddata.TabIndex = 5;
             this.rm1fddata.Text = "0";
             // 
@@ -462,19 +462,19 @@
             // 
             this.rm1dgdata.AutoSize = true;
             this.rm1dgdata.ForeColor = System.Drawing.Color.Red;
-            this.rm1dgdata.Location = new System.Drawing.Point(247, 20);
+            this.rm1dgdata.Location = new System.Drawing.Point(234, 16);
             this.rm1dgdata.Name = "rm1dgdata";
-            this.rm1dgdata.Size = new System.Drawing.Size(36, 15);
+            this.rm1dgdata.Size = new System.Drawing.Size(11, 12);
             this.rm1dgdata.TabIndex = 4;
-            this.rm1dgdata.Text = "36.5";
+            this.rm1dgdata.Text = "0";
             // 
             // 방1공기청정기
             // 
             this.방1공기청정기.BackColor = System.Drawing.Color.Lime;
-            this.방1공기청정기.Location = new System.Drawing.Point(194, 94);
+            this.방1공기청정기.Location = new System.Drawing.Point(170, 75);
             this.방1공기청정기.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.방1공기청정기.Name = "방1공기청정기";
-            this.방1공기청정기.Size = new System.Drawing.Size(101, 200);
+            this.방1공기청정기.Size = new System.Drawing.Size(88, 160);
             this.방1공기청정기.TabIndex = 3;
             this.방1공기청정기.Text = "공기청정기";
             this.방1공기청정기.UseVisualStyleBackColor = false;
@@ -483,10 +483,10 @@
             // 방1전등
             // 
             this.방1전등.BackColor = System.Drawing.Color.Yellow;
-            this.방1전등.Location = new System.Drawing.Point(6, 142);
+            this.방1전등.Location = new System.Drawing.Point(5, 114);
             this.방1전등.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.방1전등.Name = "방1전등";
-            this.방1전등.Size = new System.Drawing.Size(25, 70);
+            this.방1전등.Size = new System.Drawing.Size(22, 56);
             this.방1전등.TabIndex = 2;
             this.방1전등.Text = "전등";
             this.방1전등.UseVisualStyleBackColor = false;
@@ -495,10 +495,10 @@
             // 방1난방
             // 
             this.방1난방.BackColor = System.Drawing.Color.Red;
-            this.방1난방.Location = new System.Drawing.Point(6, 218);
+            this.방1난방.Location = new System.Drawing.Point(5, 174);
             this.방1난방.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.방1난방.Name = "방1난방";
-            this.방1난방.Size = new System.Drawing.Size(25, 70);
+            this.방1난방.Size = new System.Drawing.Size(22, 56);
             this.방1난방.TabIndex = 1;
             this.방1난방.Text = "난방";
             this.방1난방.UseVisualStyleBackColor = false;
@@ -506,10 +506,10 @@
             // 방1에어컨
             // 
             this.방1에어컨.BackColor = System.Drawing.Color.Blue;
-            this.방1에어컨.Location = new System.Drawing.Point(6, 24);
+            this.방1에어컨.Location = new System.Drawing.Point(5, 19);
             this.방1에어컨.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.방1에어컨.Name = "방1에어컨";
-            this.방1에어컨.Size = new System.Drawing.Size(150, 50);
+            this.방1에어컨.Size = new System.Drawing.Size(131, 40);
             this.방1에어컨.TabIndex = 0;
             this.방1에어컨.Text = "에어컨";
             this.방1에어컨.UseVisualStyleBackColor = false;
@@ -521,10 +521,10 @@
             // 
             // SettingData
             // 
-            this.SettingData.Location = new System.Drawing.Point(34, 12);
+            this.SettingData.Location = new System.Drawing.Point(30, 10);
             this.SettingData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SettingData.Name = "SettingData";
-            this.SettingData.Size = new System.Drawing.Size(299, 75);
+            this.SettingData.Size = new System.Drawing.Size(262, 60);
             this.SettingData.TabIndex = 8;
             this.SettingData.Text = "환경변수 설정";
             this.SettingData.UseVisualStyleBackColor = true;
@@ -533,45 +533,45 @@
             // seasonlb
             // 
             this.seasonlb.AutoSize = true;
-            this.seasonlb.Location = new System.Drawing.Point(352, 22);
+            this.seasonlb.Location = new System.Drawing.Point(308, 18);
             this.seasonlb.Name = "seasonlb";
-            this.seasonlb.Size = new System.Drawing.Size(37, 15);
+            this.seasonlb.Size = new System.Drawing.Size(29, 12);
             this.seasonlb.TabIndex = 9;
             this.seasonlb.Text = "계절";
             // 
             // timelb
             // 
             this.timelb.AutoSize = true;
-            this.timelb.Location = new System.Drawing.Point(352, 58);
+            this.timelb.Location = new System.Drawing.Point(308, 46);
             this.timelb.Name = "timelb";
-            this.timelb.Size = new System.Drawing.Size(37, 15);
+            this.timelb.Size = new System.Drawing.Size(29, 12);
             this.timelb.TabIndex = 10;
             this.timelb.Text = "시간";
             // 
             // seasondatalb
             // 
             this.seasondatalb.AutoSize = true;
-            this.seasondatalb.Location = new System.Drawing.Point(457, 22);
+            this.seasondatalb.Location = new System.Drawing.Point(400, 18);
             this.seasondatalb.Name = "seasondatalb";
-            this.seasondatalb.Size = new System.Drawing.Size(22, 15);
+            this.seasondatalb.Size = new System.Drawing.Size(17, 12);
             this.seasondatalb.TabIndex = 11;
             this.seasondatalb.Text = "봄";
             // 
             // timedatalb
             // 
             this.timedatalb.AutoSize = true;
-            this.timedatalb.Location = new System.Drawing.Point(457, 58);
+            this.timedatalb.Location = new System.Drawing.Point(400, 46);
             this.timedatalb.Name = "timedatalb";
-            this.timedatalb.Size = new System.Drawing.Size(15, 15);
+            this.timedatalb.Size = new System.Drawing.Size(11, 12);
             this.timedatalb.TabIndex = 12;
             this.timedatalb.Text = "0";
             // 
             // timestartbt
             // 
-            this.timestartbt.Location = new System.Drawing.Point(547, 12);
+            this.timestartbt.Location = new System.Drawing.Point(479, 10);
             this.timestartbt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.timestartbt.Name = "timestartbt";
-            this.timestartbt.Size = new System.Drawing.Size(101, 46);
+            this.timestartbt.Size = new System.Drawing.Size(88, 37);
             this.timestartbt.TabIndex = 14;
             this.timestartbt.Text = "시작/정지";
             this.timestartbt.UseVisualStyleBackColor = true;
@@ -584,10 +584,10 @@
             // 
             // timeaccel
             // 
-            this.timeaccel.Location = new System.Drawing.Point(547, 58);
+            this.timeaccel.Location = new System.Drawing.Point(479, 46);
             this.timeaccel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.timeaccel.Name = "timeaccel";
-            this.timeaccel.Size = new System.Drawing.Size(101, 29);
+            this.timeaccel.Size = new System.Drawing.Size(88, 23);
             this.timeaccel.TabIndex = 15;
             this.timeaccel.Text = "시간 가속";
             this.timeaccel.UseVisualStyleBackColor = true;
@@ -595,9 +595,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 752);
+            this.ClientSize = new System.Drawing.Size(597, 602);
             this.Controls.Add(this.timeaccel);
             this.Controls.Add(this.timestartbt);
             this.Controls.Add(this.timedatalb);
