@@ -72,8 +72,9 @@
             this.timelb = new System.Windows.Forms.Label();
             this.seasondatalb = new System.Windows.Forms.Label();
             this.timedatalb = new System.Windows.Forms.Label();
-            this.hourlb = new System.Windows.Forms.Label();
             this.timestartbt = new System.Windows.Forms.Button();
+            this.time1second = new System.Windows.Forms.Timer(this.components);
+            this.timeaccel = new System.Windows.Forms.Button();
             this.방4.SuspendLayout();
             this.방3.SuspendLayout();
             this.방2.SuspendLayout();
@@ -170,6 +171,7 @@
             this.방4전등.TabIndex = 4;
             this.방4전등.Text = "전등";
             this.방4전등.UseVisualStyleBackColor = false;
+            this.방4전등.Click += new System.EventHandler(this.방전등_Click);
             // 
             // 방4에어컨
             // 
@@ -273,6 +275,7 @@
             this.방3전등.TabIndex = 6;
             this.방3전등.Text = "전등";
             this.방3전등.UseVisualStyleBackColor = false;
+            this.방3전등.Click += new System.EventHandler(this.방전등_Click);
             // 
             // 방3공기청정기
             // 
@@ -330,6 +333,7 @@
             this.방2전등.TabIndex = 8;
             this.방2전등.Text = "전등";
             this.방2전등.UseVisualStyleBackColor = false;
+            this.방2전등.Click += new System.EventHandler(this.방전등_Click);
             // 
             // 방2에어컨
             // 
@@ -470,7 +474,7 @@
             this.방1전등.TabIndex = 2;
             this.방1전등.Text = "전등";
             this.방1전등.UseVisualStyleBackColor = false;
-            this.방1전등.Click += new System.EventHandler(this.방1전등_Click);
+            this.방1전등.Click += new System.EventHandler(this.방전등_Click);
             // 
             // 방1난방
             // 
@@ -546,18 +550,9 @@
             this.timedatalb.TabIndex = 12;
             this.timedatalb.Text = "0";
             // 
-            // hourlb
-            // 
-            this.hourlb.AutoSize = true;
-            this.hourlb.Location = new System.Drawing.Point(478, 58);
-            this.hourlb.Name = "hourlb";
-            this.hourlb.Size = new System.Drawing.Size(22, 15);
-            this.hourlb.TabIndex = 13;
-            this.hourlb.Text = "시";
-            // 
             // timestartbt
             // 
-            this.timestartbt.Location = new System.Drawing.Point(547, 22);
+            this.timestartbt.Location = new System.Drawing.Point(547, 12);
             this.timestartbt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.timestartbt.Name = "timestartbt";
             this.timestartbt.Size = new System.Drawing.Size(101, 46);
@@ -566,13 +561,29 @@
             this.timestartbt.UseVisualStyleBackColor = true;
             this.timestartbt.Click += new System.EventHandler(this.timestartbt_Click);
             // 
+            // time1second
+            // 
+            this.time1second.Interval = 1000;
+            this.time1second.Tick += new System.EventHandler(this.time1second_Tick);
+            // 
+            // timeaccel
+            // 
+            this.timeaccel.Location = new System.Drawing.Point(547, 58);
+            this.timeaccel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.timeaccel.Name = "timeaccel";
+            this.timeaccel.Size = new System.Drawing.Size(101, 29);
+            this.timeaccel.TabIndex = 15;
+            this.timeaccel.Text = "시간 가속";
+            this.timeaccel.UseVisualStyleBackColor = true;
+            this.timeaccel.Click += new System.EventHandler(this.timeaccel_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 752);
+            this.Controls.Add(this.timeaccel);
             this.Controls.Add(this.timestartbt);
-            this.Controls.Add(this.hourlb);
             this.Controls.Add(this.timedatalb);
             this.Controls.Add(this.seasondatalb);
             this.Controls.Add(this.timelb);
@@ -624,7 +635,6 @@
         private System.Windows.Forms.Label timelb;
         private System.Windows.Forms.Label seasondatalb;
         private System.Windows.Forms.Label timedatalb;
-        private System.Windows.Forms.Label hourlb;
         private System.Windows.Forms.Button timestartbt;
         private System.Windows.Forms.Label rm1degree;
         private System.Windows.Forms.Label rm1finedust;
@@ -646,6 +656,8 @@
         private System.Windows.Forms.Button 방2전등;
         private System.Windows.Forms.Button 방2에어컨;
         private System.Windows.Forms.Button 방2공기청정기;
+        private System.Windows.Forms.Timer time1second;
+        private System.Windows.Forms.Button timeaccel;
     }
 }
 
