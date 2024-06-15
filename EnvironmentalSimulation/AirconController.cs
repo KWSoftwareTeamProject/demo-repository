@@ -17,6 +17,7 @@ namespace EnvironmentalSimulation
         public bool turnOnSwing;
         public int fanSpeedN;
         public int setToTemp;
+        Form1 form1;
 
         public event EventHandler roomAC_Changed;
         public event EventHandler Changed_Aircon;
@@ -79,11 +80,14 @@ namespace EnvironmentalSimulation
             {
                 AirconControllerON();
             }
+            form1 = (Form1)this.Owner;
+            ACtimer.Start();
         }
 
         private void AirconController_FormClosed(object sender, FormClosedEventArgs e)//창이 닫힐 때 가지고 있던 정보를 넘겨줌
         {
             roomAC_Changed(this, new EventArgs());
+            ACtimer.Stop();
         }
 
         private void fanSpeed_btn_Click(object sender, EventArgs e)//풍향세기 버튼을 누른 경우
@@ -111,7 +115,7 @@ namespace EnvironmentalSimulation
             else
             {
                 setToTemp++;
-                setToTemp_lbl.Text = setToTemp.ToString() + "도";
+                setToTemp_lbl.Text = setToTemp.ToString() + "dddd";
             }
         }
 
@@ -164,6 +168,21 @@ namespace EnvironmentalSimulation
 
         private void ACtimer_Tick(object sender, EventArgs e)
         {
+            float degree = form1.Room1data.getDegree();
+            if (degree >= 25)
+            {
+                turnOn = true;
+                if (degree >= 30)
+                    fanSpeedN = 1;
+                else if (degree <= 28)
+                    fanSpeedN = 0;
+            }
+            else
+                turnOn = false;
+            if(turnOn == true)
+                AirconControllerON();
+            else
+                AirconControllerOFF();
         }
     }
 }

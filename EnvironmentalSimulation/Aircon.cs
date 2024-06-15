@@ -31,14 +31,18 @@ namespace EnvironmentalSimulation
             this.setToTemp = setToTemp;
         }
 
-        public void EV_Check(string season/*, int temp*/)
+        public void EV_Check(float temp)
         {
-            if (season == "여름")
+            if(temp >= 25)
+            {
                 turnOn = true;
+                if (temp >= 32)
+                    fanSpeedN = 1;
+                else if (temp <= 28)
+                    fanSpeedN = 0;
+            }
             else
                 turnOn = false;
-            //여기에는 28도 이상 되면 turnOn이 켜지도록
-            //여기에는 32도 이상 되면 fanSpeedN = 1이 되도록
         }
     }
 }
