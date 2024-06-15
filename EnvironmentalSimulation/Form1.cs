@@ -14,7 +14,10 @@ namespace EnvironmentalSimulation
     public partial class Form1 : Form
     {
         public Color currentDateColor;//현재 날짜의 색깔 여부
+        public float SunUp;
+        public float SunDown;
 
+        public bool istimeaccel;
         //Roomdata는 set get으로 데이터 설정 가능
 
         public RoomData Room1data;//방 1의 데이터 (온도, 미세먼지)
@@ -46,10 +49,15 @@ namespace EnvironmentalSimulation
         public Form1()
         {
             InitializeComponent();
-            Room1data=new RoomData();
-            Room2data=new RoomData();
-            Room3data=new RoomData();
-            Room4data=new RoomData();
+            setValue();
+        }
+
+        private void setValue()
+        {
+            Room1data = new RoomData();
+            Room2data = new RoomData();
+            Room3data = new RoomData();
+            Room4data = new RoomData();
 
             room1Aircleaner = new Aircleaner(Room1data);
             room2Aircleaner = new Aircleaner(Room2data);
@@ -60,6 +68,7 @@ namespace EnvironmentalSimulation
             room2Heater = new Heater(Room2data);
             room3Heater = new Heater(Room3data);
             room4Heater = new Heater(Room4data);
+            istimeaccel = false;//시간 가속
         }
 
         private void 공기청정기_Click(object sender, EventArgs e)
@@ -81,23 +90,61 @@ namespace EnvironmentalSimulation
             }
         }
 
-        private void 방1전등_Click(object sender, EventArgs e)
+        private void 방전등_Click(object sender, EventArgs e)
         {
             if (isstart == true)
             {
                 LightController LC = new LightController();
                 LC.Owner = this;
-                LC.ChangeLight += new EventHandler(Change_Light);
+                if (((Button)sender).Name == "방1전등")
+                {
+                    LC.ButtonInfo = 1;
+                    LC.ChangeLight += new EventHandler(Change_Light1);
+                }
+                else if (((Button)sender).Name == "방2전등")
+                {
+                    LC.ButtonInfo = 2;
+                    LC.ChangeLight += new EventHandler(Change_Light2);
+                } else if (((Button)sender).Name == "방3전등")
+                {
+                    LC.ButtonInfo = 3;
+                    LC.ChangeLight += new EventHandler(Change_Light3);
+                } else if (((Button)sender).Name == "방4전등")
+                {
+                    LC.ButtonInfo = 4;
+                    LC.ChangeLight += new EventHandler(Change_Light4);
+                }
                 LC.Show();
             }
         }
 
-        private void Change_Light(object sender, EventArgs e)//컨트롤러에서 인자 전달
+        private void Change_Light1(object sender, EventArgs e)//컨트롤러에서 인자 전달(방1 전등)
         {
             
                 LightController Lc = sender as LightController;
                 Color Lightness = Lc.GetLightnessValue();
                 방1.BackColor = Lightness;
+        }
+        private void Change_Light2(object sender, EventArgs e)//컨트롤러에서 인자 전달(방2 전등)
+        {
+
+            LightController Lc = sender as LightController;
+            Color Lightness = Lc.GetLightnessValue();
+            방2.BackColor = Lightness;
+        }
+        private void Change_Light3(object sender, EventArgs e)//컨트롤러에서 인자 전달(방3 전등)
+        {
+
+            LightController Lc = sender as LightController;
+            Color Lightness = Lc.GetLightnessValue();
+            방3.BackColor = Lightness;
+        }
+        private void Change_Light4(object sender, EventArgs e)//컨트롤러에서 인자 전달(방4 전등)
+        {
+
+            LightController Lc = sender as LightController;
+            Color Lightness = Lc.GetLightnessValue();
+            방4.BackColor = Lightness;
         }
 
         public Color GetRoom1data()//방1의 배경색 전달
@@ -105,25 +152,79 @@ namespace EnvironmentalSimulation
             Color color = Color.FromArgb(방1.BackColor.R, 방1.BackColor.G, 방1.BackColor.B);
             return color;
         }
-
-       
-        private void setTime_Tick(object sender, EventArgs e)//시간 작동 (작동이 안되어 있을 시 시간 변동 x)
+        public Color GetRoom2data()//방1의 배경색 전달
         {
-            if(Room1data.getlightonoff()==false)//방1의 전등이 on 되어 있을때 작동
-            {
-                방1.BackColor = currentDateColor;
-                방2.BackColor = currentDateColor;
-                방3.BackColor = currentDateColor;
-                방4.BackColor = currentDateColor;
-            }
+            Color color = Color.FromArgb(방2.BackColor.R, 방2.BackColor.G, 방2.BackColor.B);
+            return color;
+        }
+
+        public Color GetRoom3data()//방1의 배경색 전달
+        {
+            Color color = Color.FromArgb(방3.BackColor.R, 방3.BackColor.G, 방3.BackColor.B);
+            return color;
+        }
+        public Color GetRoom4data()//방1의 배경색 전달
+        {
+            Color color = Color.FromArgb(방4.BackColor.R, 방4.BackColor.G, 방4.BackColor.B);
+            return color;
+        }
+
+
+
+
+        private void setTime_Tick(object sender, EventArgs e)//시간 작동 (작동이 안되어 있을 시 시간 변동 x)(0.1초 마다 작동)
+        {
+            presettinglight();
 
             room1Aircleaner.Update();
             room2Aircleaner.Update();
             room3Aircleaner.Update();
             room4Aircleaner.Update();
 
-            timedatalb.Text = dayTime.ToString();
+            int texttime = (int)dayTime;
+            timedatalb.Text = texttime.ToString()+" 시";
             rmlbset();
+        }
+
+        private void presettinglight() {
+            if (Room1data.getlightonoff() == false)//of일떄 기본으로 세팅
+            {
+                방1.BackColor = currentDateColor;
+                방1전등.ForeColor = Color.Black;
+            }
+            else
+            {
+                방1전등.ForeColor = Color.Red;
+            }
+            if (Room2data.getlightonoff() == false)
+            {
+                방2.BackColor = currentDateColor;
+                방2전등.ForeColor = Color.Black;
+            }
+            else
+            {
+                방2전등.ForeColor = Color.Red;
+
+            }
+            if (Room3data.getlightonoff() == false)
+            {
+                방3.BackColor = currentDateColor;
+                방3전등.ForeColor = Color.Black;
+            }
+            else
+            {
+                방3전등.ForeColor = Color.Red;
+
+            }
+            if (Room4data.getlightonoff() == false)
+            {
+                방4.BackColor = currentDateColor;
+                방4전등.ForeColor = Color.Black;
+            }
+            else
+            {
+                방4전등.ForeColor = Color.Red;
+            }
         }
 
         private void rmlbset()//각 방의 데이타 정보 표기 세팅
@@ -143,6 +244,7 @@ namespace EnvironmentalSimulation
         {
             currentDateColor = new Color();
             //currentDateColor = Color.FromArgb();//배경색깔 추가
+            //example.BackColor = Color.Transparent;
 
             rmlbset();
         }
@@ -236,8 +338,9 @@ namespace EnvironmentalSimulation
 
         private void timestartbt_Click(object sender, EventArgs e)
         {
-            if (isstart == false)
+            if (isstart == false)//꺼져있을 경우 실행
             {
+                timestartbt.ForeColor = Color.Red;
                 //계절과 온도에 따라서 에어컨 전력 등 설정
                 /*room1AC.EV_Check(seasondatalb.Text, 온도);
                 room2AC.EV_Check(seasondatalb.Text, 온도);
@@ -254,21 +357,41 @@ namespace EnvironmentalSimulation
                     방4에어컨.BackColor = Color.White;
                 */
                 setTime.Start();
+                time1second.Start();
                 isstart = true;
             }
-            else
+            else//켜져있을 경우 멈춤
             {
+                timestartbt.ForeColor = Color.Black;
                 isstart = false;
                 setTime.Stop();
-                방1.BackColor = Color.FromArgb(192, 255, 255);
-                방2.BackColor = Color.FromArgb(192, 255, 255);
-                방3.BackColor= Color.FromArgb(192, 255, 255);
-                방4.BackColor= Color.FromArgb(192, 255, 255);
+                time1second.Stop();
+              
                 방1에어컨.BackColor = Color.Blue;/*
                 방2에어컨.BackColor = Color.Blue;
                 방3에어컨.BackColor = Color.Blue;
                 방4에어컨.BackColor = Color.Blue;*/
+                resetvalue();
             }
+        }
+
+        private void resetvalue()
+        {
+            dayTime = 0;
+            setTime.Stop();
+            time1second.Stop();
+            방1.BackColor = Color.FromArgb(192, 255, 255);
+            방2.BackColor = Color.FromArgb(192, 255, 255);
+            방3.BackColor = Color.FromArgb(192, 255, 255);
+            방4.BackColor = Color.FromArgb(192, 255, 255);
+            방1전등.ForeColor = Color.Black;
+            방2전등.ForeColor = Color.Black;
+            방3전등.ForeColor = Color.Black;
+            방4전등.ForeColor = Color.Black;
+            Room1data.setlightonoff(false);
+            Room2data.setlightonoff(false);
+            Room3data.setlightonoff(false);
+            Room4data.setlightonoff(false);
         }
 
         private void 난방_Click(object sender, EventArgs e)
@@ -278,6 +401,69 @@ namespace EnvironmentalSimulation
                 HeaterController HC = new HeaterController();
                 HC.Owner = this;
                 HC.Show();
+            }
+        }
+
+        
+        private void realtimesetting()//환경변수 끝날때 설정//시간 다르게 설정?
+        {
+            if (season == "봄")
+            {
+                SunUp = 7f;
+                SunDown = 18.5f;
+            } else if (season =="여름")
+            {
+                SunUp = 5.5f;
+                SunDown = 19.5f;
+            }else if(season=="가을")
+            {
+                SunUp = 7f;
+                SunDown = 18.5f;
+            }else if(season=="겨울")
+            {
+                SunUp = 8f;
+                SunDown = 17f;
+            }
+        }
+
+        private void lightfunction()//함수적용 다시할 필요 있음//나중에 자동모드일때만 설정하도록 바꿀것
+        {
+            currentDateColor = Color.FromArgb(255, 255, (int)(130-120*Math.Cos(2*Math.PI*dayTime/24)));
+        }
+
+        private void time1second_Tick(object sender, EventArgs e)
+        {
+            if(isstart==true)
+            {
+                if(istimeaccel==false)
+                {
+                    dayTime += 0.1f;
+                }
+                else
+                {
+                    dayTime += 1;
+                }
+                if(dayTime>24)
+                {
+                    dayTime = 0;
+                }
+
+                realtimesetting();
+                lightfunction();
+            }
+        }
+
+        private void timeaccel_Click(object sender, EventArgs e)
+        {
+            if(istimeaccel==false)
+            {
+                istimeaccel = true;
+                timeaccel.ForeColor=Color.Red;
+            }
+            else
+            {
+                istimeaccel = false;
+                timeaccel.ForeColor = Color.Black;
             }
         }
     }

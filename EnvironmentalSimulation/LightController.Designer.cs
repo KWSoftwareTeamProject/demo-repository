@@ -33,10 +33,10 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.lightturn = new System.Windows.Forms.Button();
-            this.hsbright = new System.Windows.Forms.HScrollBar();
             this.cld = new System.Windows.Forms.ColorDialog();
             this.currentTime = new System.Windows.Forms.Timer(this.components);
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // BackGround1
@@ -67,11 +67,12 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(430, 230);
             this.textBox2.TabIndex = 3;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // lightturn
             // 
             this.lightturn.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lightturn.Location = new System.Drawing.Point(26, 283);
+            this.lightturn.Location = new System.Drawing.Point(25, 263);
             this.lightturn.Name = "lightturn";
             this.lightturn.Size = new System.Drawing.Size(431, 92);
             this.lightturn.TabIndex = 4;
@@ -79,33 +80,36 @@
             this.lightturn.UseVisualStyleBackColor = true;
             this.lightturn.Click += new System.EventHandler(this.lightturn_Click);
             // 
-            // hsbright
-            // 
-            this.hsbright.Location = new System.Drawing.Point(26, 500);
-            this.hsbright.Name = "hsbright";
-            this.hsbright.Size = new System.Drawing.Size(430, 43);
-            this.hsbright.TabIndex = 6;
-            this.hsbright.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hsbright_Scroll);
-            // 
             // currentTime
             // 
             this.currentTime.Tick += new System.EventHandler(this.currentTime_Tick);
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(38, 398);
+            this.textBox3.Location = new System.Drawing.Point(25, 361);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(407, 83);
+            this.textBox3.Size = new System.Drawing.Size(431, 60);
             this.textBox3.TabIndex = 7;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel1.Location = new System.Drawing.Point(26, 427);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(431, 201);
+            this.panel1.TabIndex = 8;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
             // LightController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(482, 653);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.hsbright);
             this.Controls.Add(this.lightturn);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -124,9 +128,9 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button lightturn;
-        private System.Windows.Forms.HScrollBar hsbright;
         private System.Windows.Forms.ColorDialog cld;
         private System.Windows.Forms.Timer currentTime;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Panel panel1;
     }
 }

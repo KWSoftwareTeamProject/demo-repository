@@ -29,6 +29,7 @@ namespace EnvironmentalSimulation
         {
             lightonoff = onoff;
         }
+      
         public int getFineDust()
         {
             return fineDust;
@@ -41,5 +42,6 @@ namespace EnvironmentalSimulation
         {
             return lightonoff;
         }
+        
     }
 }
