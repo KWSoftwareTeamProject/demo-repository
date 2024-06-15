@@ -26,6 +26,7 @@ namespace EnvironmentalSimulation
         private bool autoOn;
 
         private int timer;
+        private int interval;
         private int i;
 
         public Aircleaner(RoomData room)
@@ -51,6 +52,7 @@ namespace EnvironmentalSimulation
             autoOn = false;
 
             timer = 0;
+            interval = 100;
             i = 0;
         }
 
@@ -76,7 +78,13 @@ namespace EnvironmentalSimulation
             room.setFineDust((int)curFineDust);
         }
 
-        public void Update()    // Form1.cs 타이머에서 호출
+        public void UpdateTimeAccel(bool isTimeAccel)   // Form1.cs 타이머에서 호출
+        {
+            if (isTimeAccel) interval = 10;
+            else interval = 100;
+        }
+
+        public void Update()    // AirCleanerController.cs 타이머에서 호출
         {
             if (IsTimerOn()) Timer();
             if (IsAutoOn()) Auto();
@@ -133,6 +141,7 @@ namespace EnvironmentalSimulation
                 timerOn = false;
                 autoOn = false;
                 SetMode(0);
+                NightOff();
                 PowerOff();
             }
         }
@@ -157,6 +166,11 @@ namespace EnvironmentalSimulation
         public int GetMode()
         {
             return modeIndex;
+        }
+
+        public bool isPowerOn()
+        {
+            return powerOn;
         }
 
         public void PowerOn()
@@ -211,7 +225,7 @@ namespace EnvironmentalSimulation
             return timer;
         }
 
-        private bool IsAutoOn()
+        public bool IsAutoOn()
         {
             return autoOn;
         }
@@ -235,6 +249,11 @@ namespace EnvironmentalSimulation
         public int GetFineDust()
         {
             return (int)curFineDust;
+        }
+
+        public int GetInterval()
+        {
+            return interval;
         }
     }
 }
