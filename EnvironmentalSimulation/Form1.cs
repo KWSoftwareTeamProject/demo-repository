@@ -176,10 +176,10 @@ namespace EnvironmentalSimulation
         {
             presettinglight();
 
-            room1Aircleaner.Update();
-            room2Aircleaner.Update();
-            room3Aircleaner.Update();
-            room4Aircleaner.Update();
+            room1Aircleaner.UpdateTimeAccel(istimeaccel);
+            room2Aircleaner.UpdateTimeAccel(istimeaccel);
+            room3Aircleaner.UpdateTimeAccel(istimeaccel);
+            room4Aircleaner.UpdateTimeAccel(istimeaccel);
 
             int texttime = (int)dayTime;
             timedatalb.Text = texttime.ToString()+" 시";

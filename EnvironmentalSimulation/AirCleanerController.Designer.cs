@@ -42,7 +42,7 @@
             // 
             // btnNight
             // 
-            this.btnNight.BackgroundImage = global::EnvironmentalSimulation.Properties.Resources.moon;
+            this.btnNight.BackgroundImage = global::EnvironmentalSimulation.Properties.Resources.moonOff;
             this.btnNight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnNight.Location = new System.Drawing.Point(48, 130);
             this.btnNight.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);

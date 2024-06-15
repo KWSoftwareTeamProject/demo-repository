@@ -62,25 +62,32 @@ namespace EnvironmentalSimulation
             }
 
             aircleaner.NightOff();
+            ChangeButtonDisplay();
         }
 
         private void btnNight_Click(object sender, EventArgs e)
         {
             aircleaner.NightOnOff();
+            ChangeButtonDisplay();
         }
 
         private void btnTimer_Click(object sender, EventArgs e)
         {
             aircleaner.TimerOn(INTERVAL);
+            ChangeButtonDisplay();
         }
 
         private void btnAuto_Click(object sender, EventArgs e)
         {
             aircleaner.AutoOnOff();
+            ChangeButtonDisplay();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            timer1.Interval = aircleaner.GetInterval();
+            aircleaner.Update();
+
             int fineDust = aircleaner.GetFineDust();
             if (fineDust > 75)
                 lblPMSensor.BackColor = Color.Black;
@@ -93,6 +100,7 @@ namespace EnvironmentalSimulation
 
             ChangeRadioButtons(aircleaner.GetMode());
             ChangeTimer(aircleaner.GetTimer());
+            ChangeButtonDisplay();
         }
         
         private void ChangeMode(int modeIndex)
@@ -110,7 +118,8 @@ namespace EnvironmentalSimulation
             switch (modeIndex)
             {
                 case 1:
-                    rdoLow.Checked = true;
+                    if (aircleaner.GetFineDust() >= 16)
+                        rdoLow.Checked = true;
                     break;
                 case 2:
                     rdoMid.Checked = true;
@@ -136,6 +145,34 @@ namespace EnvironmentalSimulation
             stringBuilder.Append(minute);
 
             btnTimer.Text = stringBuilder.ToString();
+        }
+
+        private void ChangeButtonDisplay()
+        {
+            btnNight.BackgroundImage = Properties.Resources.moonOff;
+            btnTimer.BackColor = SystemColors.Control;
+            btnAuto.BackColor = SystemColors.Control;
+            btnPower.BackColor = SystemColors.Control;
+
+            if (aircleaner.IsTimerOn())
+            {
+                btnTimer.BackColor = Color.Yellow;
+            }
+            else
+            {
+                btnNight.BackgroundImage = Properties.Resources.moonOff;
+                btnTimer.BackColor = SystemColors.Control;
+                btnAuto.BackColor = SystemColors.Control;
+                btnPower.BackColor = SystemColors.Control;
+            }
+
+
+            if (aircleaner.IsNightOn())
+                btnNight.BackgroundImage = Properties.Resources.moon;
+            else if (aircleaner.IsAutoOn())
+                btnAuto.BackColor = Color.FromArgb(209, 131, 131);
+            else if (aircleaner.isPowerOn())
+                btnPower.BackColor = Color.Yellow;
         }
 
         private void AirCleanerController_FormClosing(object sender, FormClosingEventArgs e)
