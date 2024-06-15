@@ -105,6 +105,7 @@
             // rm4degree
             // 
             this.rm4degree.AutoSize = true;
+            this.rm4degree.ForeColor = System.Drawing.Color.Red;
             this.rm4degree.Location = new System.Drawing.Point(37, 246);
             this.rm4degree.Name = "rm4degree";
             this.rm4degree.Size = new System.Drawing.Size(37, 15);
@@ -114,6 +115,7 @@
             // rm4finedust
             // 
             this.rm4finedust.AutoSize = true;
+            this.rm4finedust.ForeColor = System.Drawing.Color.Red;
             this.rm4finedust.Location = new System.Drawing.Point(14, 268);
             this.rm4finedust.Name = "rm4finedust";
             this.rm4finedust.Size = new System.Drawing.Size(67, 15);
@@ -135,6 +137,7 @@
             // rm4fddata
             // 
             this.rm4fddata.AutoSize = true;
+            this.rm4fddata.ForeColor = System.Drawing.Color.Red;
             this.rm4fddata.Location = new System.Drawing.Point(107, 268);
             this.rm4fddata.Name = "rm4fddata";
             this.rm4fddata.Size = new System.Drawing.Size(15, 15);
@@ -155,6 +158,7 @@
             // rm4dgdata
             // 
             this.rm4dgdata.AutoSize = true;
+            this.rm4dgdata.ForeColor = System.Drawing.Color.Red;
             this.rm4dgdata.Location = new System.Drawing.Point(87, 246);
             this.rm4dgdata.Name = "rm4dgdata";
             this.rm4dgdata.Size = new System.Drawing.Size(36, 15);
@@ -209,6 +213,7 @@
             // rm3degree
             // 
             this.rm3degree.AutoSize = true;
+            this.rm3degree.ForeColor = System.Drawing.Color.Red;
             this.rm3degree.Location = new System.Drawing.Point(203, 246);
             this.rm3degree.Name = "rm3degree";
             this.rm3degree.Size = new System.Drawing.Size(37, 15);
@@ -218,6 +223,7 @@
             // rm3finedust
             // 
             this.rm3finedust.AutoSize = true;
+            this.rm3finedust.ForeColor = System.Drawing.Color.Red;
             this.rm3finedust.Location = new System.Drawing.Point(182, 268);
             this.rm3finedust.Name = "rm3finedust";
             this.rm3finedust.Size = new System.Drawing.Size(67, 15);
@@ -239,6 +245,7 @@
             // rm3fddata
             // 
             this.rm3fddata.AutoSize = true;
+            this.rm3fddata.ForeColor = System.Drawing.Color.Red;
             this.rm3fddata.Location = new System.Drawing.Point(277, 268);
             this.rm3fddata.Name = "rm3fddata";
             this.rm3fddata.Size = new System.Drawing.Size(15, 15);
@@ -259,6 +266,7 @@
             // rm3dgdata
             // 
             this.rm3dgdata.AutoSize = true;
+            this.rm3dgdata.ForeColor = System.Drawing.Color.Red;
             this.rm3dgdata.Location = new System.Drawing.Point(255, 246);
             this.rm3dgdata.Name = "rm3dgdata";
             this.rm3dgdata.Size = new System.Drawing.Size(36, 15);
@@ -362,6 +370,7 @@
             // rm2degree
             // 
             this.rm2degree.AutoSize = true;
+            this.rm2degree.ForeColor = System.Drawing.Color.Red;
             this.rm2degree.Location = new System.Drawing.Point(37, 20);
             this.rm2degree.Name = "rm2degree";
             this.rm2degree.Size = new System.Drawing.Size(37, 15);
@@ -371,6 +380,7 @@
             // rm2finedust
             // 
             this.rm2finedust.AutoSize = true;
+            this.rm2finedust.ForeColor = System.Drawing.Color.Red;
             this.rm2finedust.Location = new System.Drawing.Point(14, 42);
             this.rm2finedust.Name = "rm2finedust";
             this.rm2finedust.Size = new System.Drawing.Size(67, 15);
@@ -380,6 +390,7 @@
             // rm2dgdata
             // 
             this.rm2dgdata.AutoSize = true;
+            this.rm2dgdata.ForeColor = System.Drawing.Color.Red;
             this.rm2dgdata.Location = new System.Drawing.Point(87, 20);
             this.rm2dgdata.Name = "rm2dgdata";
             this.rm2dgdata.Size = new System.Drawing.Size(36, 15);
@@ -389,6 +400,7 @@
             // rm2fddata
             // 
             this.rm2fddata.AutoSize = true;
+            this.rm2fddata.ForeColor = System.Drawing.Color.Red;
             this.rm2fddata.Location = new System.Drawing.Point(107, 42);
             this.rm2fddata.Name = "rm2fddata";
             this.rm2fddata.Size = new System.Drawing.Size(15, 15);
@@ -419,6 +431,7 @@
             // rm1degree
             // 
             this.rm1degree.AutoSize = true;
+            this.rm1degree.ForeColor = System.Drawing.Color.Red;
             this.rm1degree.Location = new System.Drawing.Point(197, 20);
             this.rm1degree.Name = "rm1degree";
             this.rm1degree.Size = new System.Drawing.Size(37, 15);
@@ -428,6 +441,7 @@
             // rm1finedust
             // 
             this.rm1finedust.AutoSize = true;
+            this.rm1finedust.ForeColor = System.Drawing.Color.Red;
             this.rm1finedust.Location = new System.Drawing.Point(174, 42);
             this.rm1finedust.Name = "rm1finedust";
             this.rm1finedust.Size = new System.Drawing.Size(67, 15);
@@ -437,6 +451,7 @@
             // rm1fddata
             // 
             this.rm1fddata.AutoSize = true;
+            this.rm1fddata.ForeColor = System.Drawing.Color.Red;
             this.rm1fddata.Location = new System.Drawing.Point(267, 42);
             this.rm1fddata.Name = "rm1fddata";
             this.rm1fddata.Size = new System.Drawing.Size(15, 15);
@@ -446,6 +461,7 @@
             // rm1dgdata
             // 
             this.rm1dgdata.AutoSize = true;
+            this.rm1dgdata.ForeColor = System.Drawing.Color.Red;
             this.rm1dgdata.Location = new System.Drawing.Point(247, 20);
             this.rm1dgdata.Name = "rm1dgdata";
             this.rm1dgdata.Size = new System.Drawing.Size(36, 15);

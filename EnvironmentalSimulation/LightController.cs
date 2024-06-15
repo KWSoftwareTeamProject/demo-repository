@@ -269,13 +269,14 @@ namespace EnvironmentalSimulation
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
-            double diagonal = Math.Sqrt(Math.Pow(panel1.Width/2-e.X , 2)+Math.Pow(panel1.Height/2-e.Y , 2));
-            double straight = panel1.Height / 2 - e.Y ;
+
+            double diagonal = Math.Sqrt(Math.Pow(panel1.Width / 2 - e.X, 2) + Math.Pow(panel1.Height / 2 - e.Y, 2));
+            double straight = panel1.Height / 2 - e.Y;
             if (diagonal < buttonsize / 2)
             {
                 angle = (float)Math.Acos(straight / diagonal);
 
-                if (e.X > (panel1.Width/2))//마우스가 중심보다 오른쪽
+                if (e.X > (panel1.Width / 2))//마우스가 중심보다 오른쪽
                 {
                     angle = (float)Math.Acos(straight / diagonal);
                 }
@@ -284,13 +285,19 @@ namespace EnvironmentalSimulation
                     angle = (float)(2 * Math.PI - Math.Acos(straight / diagonal));
                 }
 
-                buttonPoint.X = (int)(panel1.Width / 2 + (buttonsize / 2 )* Math.Sin(angle));
+                buttonPoint.X = (int)(panel1.Width / 2 + (buttonsize / 2) * Math.Sin(angle));
                 buttonPoint.Y = (int)(panel1.Height / 2 - (buttonsize / 2) * Math.Cos(angle));
                 panel1.Invalidate(true);
                 panel1.Update();
 
                 currentcolorsetting();
             }
+            if (lightturn.ForeColor == Color.DarkRed)
+            {
+                ChangeLight(this, new EventArgs());
+
+            }
+
 
         }
 
@@ -301,8 +308,8 @@ namespace EnvironmentalSimulation
             textBox3.BackColor = color;
         }
 
-        private void panel1_MouseUp(object sender, MouseEventArgs e)
-        {
-        }
+      
+
+       
     }
 }
