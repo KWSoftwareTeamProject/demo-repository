@@ -386,27 +386,32 @@ namespace EnvironmentalSimulation
             EC.Show();
         }
 
-        private void SetRoomTemperatures(string season)
+        private void SetRoomTemperaturesAndFineDusts(string season)
         {
             Random rand = new Random();
-            int temperature;
+            int temperature, fineDust;
 
             switch (season)
             {
                 case "봄":
                     temperature = 15 + rand.Next(-5, 6);
+                    fineDust = 57;
                     break;
                 case "여름":
                     temperature = 25 + rand.Next(-5, 6);
+                    fineDust = 25; 
                     break;
                 case "가을":
                     temperature = 15 + rand.Next(-5, 6);
+                    fineDust = 26; 
                     break;
                 case "겨울":
                     temperature = 5 + rand.Next(-5, 6);
+                    fineDust = 47; 
                     break;
                 default:
                     temperature = 20 + rand.Next(-5, 6);
+                    fineDust = 57;
                     break;
             }
 
@@ -416,12 +421,13 @@ namespace EnvironmentalSimulation
             Room3data.setDegree(temperature);
             Room4data.setDegree(temperature);
 
-            rm1dgdata.Text = Room1data.getDegree().ToString();
-            rm2dgdata.Text = Room2data.getDegree().ToString();
-            rm3dgdata.Text = Room3data.getDegree().ToString();
-            rm4dgdata.Text = Room4data.getDegree().ToString();
-        }
+            Room1data.setFineDust(fineDust);
+            Room2data.setFineDust(fineDust);
+            Room3data.setFineDust(fineDust);
+            Room4data.setFineDust(fineDust);
 
+            rmlbset();
+        }
 
         private void setting_dataset(object sender, EventArgs e)
         {
@@ -438,7 +444,7 @@ namespace EnvironmentalSimulation
             room3Aircleaner.SetSeason(season);
             room4Aircleaner.SetSeason(season);
 
-            SetRoomTemperatures(season); // 각 방의 온도를 설정하는 메서드 호출
+            SetRoomTemperaturesAndFineDusts(season); // 각 방의 온도를 설정하는 메서드 호출
         }
 
         private void timestartbt_Click(object sender, EventArgs e)
