@@ -67,8 +67,10 @@ namespace EnvironmentalSimulation
 
         private void btnNight_Click(object sender, EventArgs e)
         {
-            aircleaner.NightOnOff();
-            ChangeButtonDisplay();
+            if (!aircleaner.IsAutoOn()) { 
+                aircleaner.NightOnOff();
+                ChangeButtonDisplay();
+            }
         }
 
         private void btnTimer_Click(object sender, EventArgs e)
