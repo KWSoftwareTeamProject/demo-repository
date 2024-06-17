@@ -386,32 +386,27 @@ namespace EnvironmentalSimulation
             EC.Show();
         }
 
-        private void SetRoomTemperaturesAndFineDusts(string season)
+        private int SetRoomTemperatures(string season)
         {
             Random rand = new Random();
-            int temperature, fineDust;
+            int temperature;
 
             switch (season)
             {
                 case "봄":
                     temperature = 15 + rand.Next(-5, 6);
-                    fineDust = 57;
                     break;
                 case "여름":
                     temperature = 25 + rand.Next(-5, 6);
-                    fineDust = 25; 
                     break;
                 case "가을":
                     temperature = 15 + rand.Next(-5, 6);
-                    fineDust = 26; 
                     break;
                 case "겨울":
                     temperature = 5 + rand.Next(-5, 6);
-                    fineDust = 47; 
                     break;
                 default:
                     temperature = 20 + rand.Next(-5, 6);
-                    fineDust = 57;
                     break;
             }
 
@@ -420,6 +415,38 @@ namespace EnvironmentalSimulation
             Room2data.setDegree(temperature);
             Room3data.setDegree(temperature);
             Room4data.setDegree(temperature);
+
+            rm1dgdata.Text = Room1data.getDegree().ToString();
+            rm2dgdata.Text = Room2data.getDegree().ToString();
+            rm3dgdata.Text = Room3data.getDegree().ToString();
+            rm4dgdata.Text = Room4data.getDegree().ToString();
+
+            return temperature;
+        }
+
+        private void SetRoomTemperaturesAndFineDusts(string season)
+        {
+            Random rand = new Random();
+            int temperature, fineDust;
+
+            switch (season)
+            {
+                case "봄":
+                    fineDust = 57;
+                    break;
+                case "여름":
+                    fineDust = 25;
+                    break;
+                case "가을":
+                    fineDust = 26;
+                    break;
+                case "겨울":
+                    fineDust = 47;
+                    break;
+                default:
+                    fineDust = 57;
+                    break;
+            }
 
             Room1data.setFineDust(fineDust);
             Room2data.setFineDust(fineDust);
@@ -444,7 +471,9 @@ namespace EnvironmentalSimulation
             room3Aircleaner.SetSeason(season);
             room4Aircleaner.SetSeason(season);
 
-            SetRoomTemperaturesAndFineDusts(season); // 각 방의 온도를 설정하는 메서드 호출
+            SetRoomTemperaturesAndFineDusts(season);
+            int temperature = SetRoomTemperatures(season);
+            tempdatalb.Text = temperature.ToString();
         }
 
         private void timestartbt_Click(object sender, EventArgs e)
