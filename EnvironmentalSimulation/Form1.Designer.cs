@@ -75,6 +75,8 @@
             this.timestartbt = new System.Windows.Forms.Button();
             this.time1second = new System.Windows.Forms.Timer(this.components);
             this.timeaccel = new System.Windows.Forms.Button();
+            this.templb = new System.Windows.Forms.Label();
+            this.tempdatalb = new System.Windows.Forms.Label();
             this.방4.SuspendLayout();
             this.방3.SuspendLayout();
             this.방2.SuspendLayout();
@@ -93,7 +95,7 @@
             this.방4.Controls.Add(this.rm4dgdata);
             this.방4.Controls.Add(this.방4전등);
             this.방4.Controls.Add(this.방4에어컨);
-            this.방4.Location = new System.Drawing.Point(305, 317);
+            this.방4.Location = new System.Drawing.Point(305, 358);
             this.방4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.방4.Name = "방4";
             this.방4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -154,6 +156,7 @@
             this.방4난방.TabIndex = 4;
             this.방4난방.Text = "난방";
             this.방4난방.UseVisualStyleBackColor = false;
+            this.방4난방.Click += new System.EventHandler(this.난방_Click);
             // 
             // rm4dgdata
             // 
@@ -201,7 +204,7 @@
             this.방3.Controls.Add(this.rm3dgdata);
             this.방3.Controls.Add(this.방3전등);
             this.방3.Controls.Add(this.방3공기청정기);
-            this.방3.Location = new System.Drawing.Point(30, 317);
+            this.방3.Location = new System.Drawing.Point(30, 358);
             this.방3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.방3.Name = "방3";
             this.방3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -262,6 +265,7 @@
             this.방3난방.TabIndex = 7;
             this.방3난방.Text = "난방";
             this.방3난방.UseVisualStyleBackColor = false;
+            this.방3난방.Click += new System.EventHandler(this.난방_Click);
             // 
             // rm3dgdata
             // 
@@ -310,7 +314,7 @@
             this.방2.Controls.Add(this.rm2dgdata);
             this.방2.Controls.Add(this.rm2fddata);
             this.방2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.방2.Location = new System.Drawing.Point(305, 74);
+            this.방2.Location = new System.Drawing.Point(305, 108);
             this.방2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.방2.Name = "방2";
             this.방2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -419,7 +423,7 @@
             this.방1.Controls.Add(this.방1난방);
             this.방1.Controls.Add(this.방1에어컨);
             this.방1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.방1.Location = new System.Drawing.Point(30, 74);
+            this.방1.Location = new System.Drawing.Point(30, 108);
             this.방1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.방1.Name = "방1";
             this.방1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -502,6 +506,7 @@
             this.방1난방.TabIndex = 1;
             this.방1난방.Text = "난방";
             this.방1난방.UseVisualStyleBackColor = false;
+            this.방1난방.Click += new System.EventHandler(this.난방_Click);
             // 
             // 방1에어컨
             // 
@@ -524,7 +529,7 @@
             this.SettingData.Location = new System.Drawing.Point(30, 10);
             this.SettingData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SettingData.Name = "SettingData";
-            this.SettingData.Size = new System.Drawing.Size(262, 60);
+            this.SettingData.Size = new System.Drawing.Size(262, 81);
             this.SettingData.TabIndex = 8;
             this.SettingData.Text = "환경변수 설정";
             this.SettingData.UseVisualStyleBackColor = true;
@@ -571,7 +576,7 @@
             this.timestartbt.Location = new System.Drawing.Point(479, 10);
             this.timestartbt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.timestartbt.Name = "timestartbt";
-            this.timestartbt.Size = new System.Drawing.Size(88, 37);
+            this.timestartbt.Size = new System.Drawing.Size(88, 50);
             this.timestartbt.TabIndex = 14;
             this.timestartbt.Text = "시작/정지";
             this.timestartbt.UseVisualStyleBackColor = true;
@@ -584,20 +589,40 @@
             // 
             // timeaccel
             // 
-            this.timeaccel.Location = new System.Drawing.Point(479, 46);
+            this.timeaccel.Location = new System.Drawing.Point(479, 64);
             this.timeaccel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.timeaccel.Name = "timeaccel";
-            this.timeaccel.Size = new System.Drawing.Size(88, 23);
+            this.timeaccel.Size = new System.Drawing.Size(88, 27);
             this.timeaccel.TabIndex = 15;
             this.timeaccel.Text = "시간 가속";
             this.timeaccel.UseVisualStyleBackColor = true;
             this.timeaccel.Click += new System.EventHandler(this.timeaccel_Click);
             // 
+            // templb
+            // 
+            this.templb.AutoSize = true;
+            this.templb.Location = new System.Drawing.Point(308, 73);
+            this.templb.Name = "templb";
+            this.templb.Size = new System.Drawing.Size(29, 12);
+            this.templb.TabIndex = 16;
+            this.templb.Text = "온도";
+            // 
+            // tempdatalb
+            // 
+            this.tempdatalb.AutoSize = true;
+            this.tempdatalb.Location = new System.Drawing.Point(400, 73);
+            this.tempdatalb.Name = "tempdatalb";
+            this.tempdatalb.Size = new System.Drawing.Size(11, 12);
+            this.tempdatalb.TabIndex = 17;
+            this.tempdatalb.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(597, 602);
+            this.ClientSize = new System.Drawing.Size(597, 643);
+            this.Controls.Add(this.tempdatalb);
+            this.Controls.Add(this.templb);
             this.Controls.Add(this.timeaccel);
             this.Controls.Add(this.timestartbt);
             this.Controls.Add(this.timedatalb);
@@ -674,6 +699,8 @@
         private System.Windows.Forms.Button 방2공기청정기;
         private System.Windows.Forms.Timer time1second;
         private System.Windows.Forms.Button timeaccel;
+        private System.Windows.Forms.Label templb;
+        private System.Windows.Forms.Label tempdatalb;
     }
 }
 
